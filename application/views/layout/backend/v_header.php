@@ -24,7 +24,7 @@
 					<h4>General</h4>
 					<ul class="list-unstyled components">
 						<li class="active">
-							<a href="<?= base_url('admin') ?>" data-toggle="collapse" aria-expanded="false"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+							<a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
 						</li>
 						<li><a href="<?= base_url('pendaftaran') ?>"><i class="fa fa-clock-o orange_color"></i> <span>Pendaftaran Warga</span></a></li>
 						<li>
@@ -34,40 +34,7 @@
 								<li><a href="<?= base_url('pendaftaran/datatolak') ?>">> <span>Data Ditolak</span></a></li>
 							</ul>
 						</li>
-						<li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
-						<li>
-							<a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
-							<ul class="collapse list-unstyled" id="apps">
-								<li><a href="email.html">> <span>Email</span></a></li>
-								<li><a href="calendar.html">> <span>Calendar</span></a></li>
-								<li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
-							</ul>
-						</li>
-						<li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>Pricing Tables</span></a></li>
-						<li>
-							<a href="contact.html">
-								<i class="fa fa-paper-plane red_color"></i> <span>Contact</span></a>
-						</li>
-						<li class="active">
-							<a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
-							<ul class="collapse list-unstyled" id="additional_page">
-								<li>
-									<a href="profile.html">> <span>Profile</span></a>
-								</li>
-								<li>
-									<a href="project.html">> <span>Projects</span></a>
-								</li>
-								<li>
-									<a href="login.html">> <span>Login</span></a>
-								</li>
-								<li>
-									<a href="404_error.html">> <span>404 Error</span></a>
-								</li>
-							</ul>
-						</li>
-						<li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
-						<li><a href="charts.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
-						<li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
+						<li><a href="<?= base_url('Program') ?>"><i class="fa fa-table purple_color2"></i> <span>Program PKMB</span></a></li>
 					</ul>
 				</div>
 			</nav>
