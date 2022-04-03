@@ -30,11 +30,12 @@
 											<a href="#"><i class="fa fa-address-book"></i><?= $this->session->userdata('username') ?></a>
 											<ul class="dropdown">
 												<li><a href="<?= base_url('warga/logout') ?>">Logout</a></li>
+												<li><a href="<?= base_url('warga/logout') ?>">Informasi Penerimaan</a></li>
 											</ul>
 										<?php } ?>
 									</li>
 									<li><a href="<?= base_url('pendaftaran/pendaftaran') ?>"><i class="fa fa-clone"></i>Pendaftaran PKMB</a></li>
-									<li><a href="events.html"><i class="fa fa-bullhorn"></i>Program PKMB</a></li>
+									<li><a href="<?= base_url('program/program') ?>"><i class="fa fa-bullhorn"></i>Program PKMB</a></li>
 								</ul>
 								<!-- End Main Menu -->
 							</div>
