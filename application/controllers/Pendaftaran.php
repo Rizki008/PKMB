@@ -40,9 +40,7 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('warganegara', 'Kewarga Negaraan', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
-		$this->form_validation->set_rules('anak_ke', 'Anak Ke', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
-
-
+		$this->form_validation->set_rules('anak_ke', 'Anak Ke', 'required', array('required' => '%s Mohon Untuk Diisi!!'));;
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'title' => 'Pendaftaran Peserta PKMB',
@@ -51,6 +49,7 @@ class Pendaftaran extends CI_Controller
 			$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
 		} else {
 			$data = array(
+				'id_warga' => $this->session->userdata('id_warga'),
 				'nama_lengkap' => $this->input->post('nama_lengkap'),
 				'nama_pang' => $this->input->post('nama_pang'),
 				'jenis_kel' => $this->input->post('jenis_kel'),
