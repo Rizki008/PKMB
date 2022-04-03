@@ -1,8 +1,7 @@
 <!-- footer -->
 <div class="container-fluid">
 	<div class="footer">
-		<p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
-			Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+		<p>Copyright © 2018 Designed by html.design. All rights reserved.<br>
 		</p>
 	</div>
 </div>
@@ -34,6 +33,40 @@
 <!-- custom js -->
 <script src="<?= base_url() ?>backend/js/custom.js"></script>
 <script src="<?= base_url() ?>backend/js/chart_custom_style1.js"></script>
+
+<script>
+	function bacaGambar(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$('#gambar_load').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$("#preview_gambar").change(function() {
+		bacaGambar(this);
+	});
+</script>
+
+<script>
+	$(function() {
+		$("#example1").DataTable({
+			"responsive": true,
+			"autoWidth": false,
+		});
+		$('#example2').DataTable({
+			"paging": true,
+			"lengthChange": false,
+			"searching": false,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+		});
+	});
+</script>
 </body>
 
 </html>
