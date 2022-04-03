@@ -190,7 +190,7 @@
 							<div class="col-lg-6 col-md-6 col-12">
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="ibu" type="text" placeholder="Nama Ibu Kandung" value="<?= set_value('ayah') ?>">
+									<input name="ibu" type="text" placeholder="Nama Ibu Kandung" value="<?= set_value('ibu') ?>">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
