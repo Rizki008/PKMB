@@ -8,6 +8,7 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_program');
+		$this->load->model('m_pendaftaran');
 	}
 
 	public function index()
