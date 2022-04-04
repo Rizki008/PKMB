@@ -9,6 +9,7 @@ class Warga extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_warga');
+		$this->load->model('m_pendaftaran');
 	}
 
 	public function register()
