@@ -153,4 +153,26 @@ class Pendaftaran extends CI_Controller
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
 	}
+
+	public function notifstatus()
+	{
+		$data = array(
+			'title' => "Data Warga Diterima",
+			'pendaftaran' => $this->m_pendaftaran->pendaftaran(),
+			'notifterima' => $this->m_pendaftaran->notifterima(),
+			'notiftolak' => $this->m_pendaftaran->notiftolak(),
+			'isi' => 'layout/frontend/pendaftaran/v_notif'
+		);
+		$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
+	}
+
+	// public function notiftolak()
+	// {
+	// 	$data = array(
+	// 		'title' => "Data Warga Tidak Diterima",
+	// 		'dataterima' => $this->m_pendaftaran->datatolak(),
+	// 		'isi' => 'layout/frontend/dataterima/v_diterima'
+	// 	);
+	// 	$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
+	// }
 }
