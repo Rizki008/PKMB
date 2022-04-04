@@ -29,7 +29,7 @@
 										<th>Tempat,Tanggal Lahir</th>
 										<th>Warga Negara</th>
 										<th>No HP</th>
-										<th>Alamat</th>
+										<th>Desa</th>
 										<th>Masuk Sekolah Ini</th>
 										<th>Tanggal Masuk Sekolah</th>
 										<th>Kelas</th>
@@ -47,7 +47,7 @@
 											<td><?= $value->tempat_lahir ?>, <?= $value->tgl_lahir ?></td>
 											<td><?= $value->warganegara ?></td>
 											<td><?= $value->no_tlpn ?></td>
-											<td><?= $value->alamat ?></td>
+											<td><?= $value->desa ?></td>
 											<td><?= $value->msk_sklh ?></td>
 											<td><?= $value->tgl_terima ?></td>
 											<td><?= $value->kelas_terima ?></td>
