@@ -15,11 +15,13 @@ class Warga_login
 	{
 		$cek = $this->ci->m_auth->warga_login($username, $password);
 		if ($cek) {
+			$id_warga = $cek->id_warga;
 			$username = $cek->username;
 			$password = $cek->password;
 			$jenis_kel = $cek->jenis_kel;
 			$usia = $cek->usia;
 
+			$this->ci->session->set_userdata('id_warga', $id_warga);
 			$this->ci->session->set_userdata('username', $username);
 			$this->ci->session->set_userdata('password', $password);
 			$this->ci->session->set_userdata('jenis_kel', $jenis_kel);
