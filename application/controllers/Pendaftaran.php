@@ -39,8 +39,14 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('jenis_kel', 'Jenis Kelamin', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('agama', 'Agama', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('warganegara', 'Kewarga Negaraan', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
-		$this->form_validation->set_rules('anak_ke', 'Anak Ke', 'required', array('required' => '%s Mohon Untuk Diisi!!'));;
+		$this->form_validation->set_rules('anak_ke', 'Anak Ke', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('rt_rw', 'Rt/Rw', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('desa', 'Desa', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('kabupaten', 'Kabupaten', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('provinsi', 'Provinsi', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'title' => 'Pendaftaran Peserta PKMB',
@@ -55,6 +61,7 @@ class Pendaftaran extends CI_Controller
 				'jenis_kel' => $this->input->post('jenis_kel'),
 				'tempat_lahir' => $this->input->post('tempat_lahir'),
 				'tgl_lahir' => $this->input->post('tgl_lahir'),
+				'agama' => $this->input->post('agama'),
 				'warganegara' => $this->input->post('warganegara'),
 				'anak_ke' => $this->input->post('anak_ke'),
 				'jml_sdr' => $this->input->post('jml_sdr'),
@@ -65,7 +72,11 @@ class Pendaftaran extends CI_Controller
 				'tinggi_bd' => $this->input->post('tinggi_bd'),
 				'gol_darah' => $this->input->post('gol_darah'),
 				'penyakit' => $this->input->post('penyakit'),
-				'alamat' => $this->input->post('alamat'),
+				'rt_rw' => $this->input->post('rt_rw'),
+				'desa' => $this->input->post('desa'),
+				'kecamatan' => $this->input->post('kecamatan'),
+				'kabupaten' => $this->input->post('kabupaten'),
+				'provinsi' => $this->input->post('provinsi'),
 				'no_tlpn' => $this->input->post('no_tlpn'),
 				'tempat_tinggal' => $this->input->post('tempat_tinggal'),
 				'ayah' => $this->input->post('ayah'),
