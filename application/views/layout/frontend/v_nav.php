@@ -1,4 +1,7 @@
 <!-- Header -->
+<?php
+$notif = $this->m_pendaftaran->notif();
+?>
 <header class="header">
 	<!-- Header Inner -->
 	<div class="header-inner overlay">
@@ -30,7 +33,7 @@
 											<a href="#"><i class="fa fa-address-book"></i><?= $this->session->userdata('username') ?></a>
 											<ul class="dropdown">
 												<li><a href="<?= base_url('warga/logout') ?>">Logout</a></li>
-												<li><a href="<?= base_url('warga/logout') ?>">Informasi Penerimaan</a></li>
+												<li><a href="<?= base_url('pendaftaran/notifstatus') ?>">Informasi Penerimaan [<?= $notif ?>]</a></li>
 											</ul>
 										<?php } ?>
 									</li>
