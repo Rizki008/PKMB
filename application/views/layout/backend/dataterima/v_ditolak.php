@@ -40,7 +40,7 @@
 											<td><?= $no++ ?></td>
 											<td><?= $value->nama_lengkap ?></td>
 											<td><?= $value->no_tlpn ?></td>
-											<td><?= $value->alamat ?></td>
+											<td><?= $value->desa ?></td>
 											<td><?= $value->msk_sklh ?></td>
 											<td><?= $value->tgl_terima ?></td>
 											<td><?= $value->kelas_terima ?></td>
