@@ -77,7 +77,7 @@
 				<div class="white_shd full">
 					<div class="full graph_head">
 						<div class="heading1 margin_0">
-							<h2>Grafik Analisis Sesuai Alamat</h2>
+							<h2>Grafik Analisis Sesuai desa</h2>
 						</div>
 					</div>
 					<div class="full graph_revenue">
@@ -87,8 +87,8 @@
 									<div class="area_chart">
 										<?php
 										foreach ($grafik as $key => $value) {
-											$alamat[] = $value->alamat;
-											$alamat[] = $value->alamat;
+											$desa[] = $value->desa;
+											$desa[] = $value->desa;
 										}
 										?>
 
@@ -99,10 +99,142 @@
 											var myChart = new Chart(ctx, {
 												type: 'bar',
 												data: {
-													labels: <?= json_encode($alamat) ?>,
+													labels: <?= json_encode($desa) ?>,
 													datasets: [{
-														label: 'Grafik Penjualan',
-														data: <?= json_encode($alamat) ?>,
+														label: 'Grafik Analisis Sesuai Alamat',
+														data: <?= json_encode($desa) ?>,
+														backgroundColor: [
+															'rgba(255, 99, 132, 0.80)',
+															'rgba(54, 162, 235, 0.80)',
+															'rgba(255, 206, 86, 0.80)',
+															'rgba(75, 192, 192, 0.80)',
+															'rgba(153, 102, 255, 0.80)',
+															'rgba(255, 159, 64, 0.80)',
+															'rgba(201, 76, 76, 0.3)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(0, 140, 162, 1)',
+															'rgba(158, 109, 8, 1)',
+															'rgba(201, 76, 76, 0.8)',
+															'rgba(0, 129, 212, 1)',
+															'rgba(201, 77, 201, 1)',
+															'rgba(255, 207, 207, 1)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(128, 98, 98, 1)',
+															'rgba(0, 0, 0, 1)',
+															'rgba(128, 128, 128, 1)',
+															'rgba(255, 99, 132, 0.80)',
+															'rgba(54, 162, 235, 0.80)',
+															'rgba(255, 206, 86, 0.80)',
+															'rgba(75, 192, 192, 0.80)',
+															'rgba(153, 102, 255, 0.80)',
+															'rgba(255, 159, 64, 0.80)',
+															'rgba(201, 76, 76, 0.3)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(0, 140, 162, 1)',
+															'rgba(158, 109, 8, 1)',
+															'rgba(201, 76, 76, 0.8)',
+															'rgba(0, 129, 212, 1)',
+															'rgba(201, 77, 201, 1)',
+															'rgba(255, 207, 207, 1)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(128, 98, 98, 1)',
+															'rgba(0, 0, 0, 1)',
+															'rgba(128, 128, 128, 1)'
+														],
+														borderColor: [
+															'rgba(255, 99, 132, 1)',
+															'rgba(54, 162, 235, 1)',
+															'rgba(255, 206, 86, 1)',
+															'rgba(75, 192, 192, 1)',
+															'rgba(153, 102, 255, 1)',
+															'rgba(255, 159, 64, 1)',
+															'rgba(201, 76, 76, 0.3)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(0, 140, 162, 1)',
+															'rgba(158, 109, 8, 1)',
+															'rgba(201, 76, 76, 0.8)',
+															'rgba(0, 129, 212, 1)',
+															'rgba(201, 77, 201, 1)',
+															'rgba(255, 207, 207, 1)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(128, 98, 98, 1)',
+															'rgba(0, 0, 0, 1)',
+															'rgba(128, 128, 128, 1)',
+															'rgba(255, 99, 132, 1)',
+															'rgba(54, 162, 235, 1)',
+															'rgba(255, 206, 86, 1)',
+															'rgba(75, 192, 192, 1)',
+															'rgba(153, 102, 255, 1)',
+															'rgba(255, 159, 64, 1)',
+															'rgba(201, 76, 76, 0.3)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(0, 140, 162, 1)',
+															'rgba(158, 109, 8, 1)',
+															'rgba(201, 76, 76, 0.8)',
+															'rgba(0, 129, 212, 1)',
+															'rgba(201, 77, 201, 1)',
+															'rgba(255, 207, 207, 1)',
+															'rgba(201, 77, 77, 1)',
+															'rgba(128, 98, 98, 1)',
+															'rgba(0, 0, 0, 1)',
+															'rgba(128, 128, 128, 1)'
+														],
+														fill: false,
+														borderWidth: 1
+													}]
+												},
+												options: {
+													scales: {
+														yAxes: [{
+															ticks: {
+																beginAtZero: true
+															}
+														}]
+													}
+												}
+											});
+										</script>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- graph -->
+		<div class="row column2 graph margin_bottom_30">
+			<div class="col-md-l2 col-lg-12">
+				<div class="white_shd full">
+					<div class="full graph_head">
+						<div class="heading1 margin_0">
+							<h2>Grafik Analisis Sesuai Usia</h2>
+						</div>
+					</div>
+					<div class="full graph_revenue">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="content">
+									<div class="area_chart">
+										<?php
+										foreach ($grafik_usia as $key => $value) {
+											$usia[] = $value->usia;
+											$usia[] = $value->usia;
+										}
+										?>
+
+
+										<canvas id="myChart1" height="100"></canvas>
+										<script>
+											var ctx = document.getElementById('myChart1');
+											var myChart1 = new Chart(ctx, {
+												type: 'bar',
+												data: {
+													labels: <?= json_encode($usia) ?>,
+													datasets: [{
+														label: 'Grafik Analisis Sesuai Usia',
+														data: <?= json_encode($usia) ?>,
 														backgroundColor: [
 															'rgba(255, 99, 132, 0.80)',
 															'rgba(54, 162, 235, 0.80)',
