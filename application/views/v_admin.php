@@ -87,8 +87,8 @@
 									<div class="area_chart">
 										<?php
 										foreach ($grafik as $key => $value) {
-											$desa[] = $value->desa;
-											$desa[] = $value->desa;
+											$kecamatan[] = $value->kecamatan;
+											$total[] = $value->total;
 										}
 										?>
 
@@ -99,10 +99,10 @@
 											var myChart = new Chart(ctx, {
 												type: 'bar',
 												data: {
-													labels: <?= json_encode($desa) ?>,
+													labels: <?= json_encode($kecamatan) ?>,
 													datasets: [{
 														label: 'Grafik Analisis Sesuai Alamat',
-														data: <?= json_encode($desa) ?>,
+														data: <?= json_encode($total) ?>,
 														backgroundColor: [
 															'rgba(255, 99, 132, 0.80)',
 															'rgba(54, 162, 235, 0.80)',
@@ -219,7 +219,7 @@
 									<div class="area_chart">
 										<?php
 										foreach ($grafik_usia as $key => $value) {
-											$usia[] = $value->usia;
+											$username[] = $value->username;
 											$usia[] = $value->usia;
 										}
 										?>
@@ -231,7 +231,7 @@
 											var myChart1 = new Chart(ctx, {
 												type: 'bar',
 												data: {
-													labels: <?= json_encode($usia) ?>,
+													labels: <?= json_encode($username) ?>,
 													datasets: [{
 														label: 'Grafik Analisis Sesuai Usia',
 														data: <?= json_encode($usia) ?>,

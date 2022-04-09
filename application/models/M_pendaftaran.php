@@ -61,21 +61,13 @@ class M_pendaftaran extends CI_Model
 
 	public function grafik()
 	{
-		$this->db->select_sum('desa');
-		$this->db->select('pendaftaran.desa');
-		$this->db->from('pendaftaran');
-		$this->db->order_by('pendaftaran.id_pendaftaran');
-		$this->db->order_by('desa', 'desc');
-		return $this->db->get()->result();
+		return $this->db->query('SELECT COUNT(kecamatan)AS total, pendaftaran.kecamatan FROM `pendaftaran` GROUP BY kecamatan;')->result();
 	}
 	public function grafik_usia()
 	{
-		$this->db->select_sum('usia');
-		$this->db->select('warga.usia');
-		$this->db->from('pendaftaran');
-		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
-		$this->db->order_by('pendaftaran.id_pendaftaran');
-		$this->db->order_by('desa', 'desc');
+		$this->db->select('*');
+		$this->db->from('warga');
+		$this->db->order_by('usia', 'desc');
 		return $this->db->get()->result();
 	}
 
