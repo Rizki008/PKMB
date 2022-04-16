@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2022 at 06:14 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.28
+-- Waktu pembuatan: 16 Apr 2022 pada 09.02
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -37,7 +37,7 @@ CREATE TABLE `kelas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran`
+-- Struktur dari tabel `pendaftaran`
 --
 
 CREATE TABLE `pendaftaran` (
@@ -91,16 +91,17 @@ CREATE TABLE `pendaftaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pendaftaran`
+-- Dumping data untuk tabel `pendaftaran`
 --
 
 INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_warga`, `nama_lengkap`, `nama_pang`, `jenis_kel`, `tempat_lahir`, `tgl_lahir`, `agama`, `warganegara`, `anak_ke`, `jml_sdr`, `jml_sdr_tiri`, `jml_sdr_angkat`, `bahasa`, `berat_bd`, `tinggi_bd`, `gol_darah`, `penyakit`, `provinsi`, `rt_rw`, `desa`, `kecamatan`, `kabupaten`, `no_tlpn`, `tempat_tinggal`, `ayah`, `ibu`, `sklh_ayah`, `sklh_ibu`, `pkrj_ayah`, `pkrj_ibu`, `wali`, `sklh_tinggi`, `hub_peserta`, `pekerjaan`, `alamat_ortu`, `tlpn`, `msk_sklh`, `nama_sklh`, `thn_lulus`, `sklh_asal`, `tgl_pindah`, `kelas_pindah`, `tgl_terima`, `kelas_terima`, `status`, `alasan`) VALUES
-(1, 1, 'diana', 'dian', 'Perempuan', 'kuningan', '1999-06-09', 'islam', 'WNI', '1', '1', '', '', '', '50', '160', 'A', '', 'jawabarat', '12/04', 'ciawilor', 'ciawigebang', 'kuningan', '0897126273812', 'Orangtua', 'jamaludin', 'omah', 'sd', 'sd', 'buruh', 'ibu rumah tangga', '', '', '', '', 'Jakarta', '0891238727182', 'Peserta Didik Baru', 'sdn kuningan', '2019-02-04', '', '0000-00-00', '', '2022-04-06', NULL, '2', 'sangat pinter');
+(1, 1, 'diana', 'dian', 'Perempuan', 'kuningan', '1999-06-09', 'islam', 'WNI', '1', '1', '', '', '', '50', '160', 'A', '', 'jawabarat', '12/04', 'ciawilor', 'ciawigebang', 'kuningan', '0897126273812', 'Orangtua', 'jamaludin', 'omah', 'sd', 'sd', 'buruh', 'ibu rumah tangga', '', '', '', '', 'Jakarta', '0891238727182', 'Peserta Didik Baru', 'sdn kuningan', '2019-02-04', '', '0000-00-00', '', '2022-04-06', NULL, '2', 'sangat pinter'),
+(2, 1, 'uud', 'jamal', 'Laki-Laki', 'kuningan', '2010-02-16', 'islam', 'WNI', '1', '2', '', '', '', '123', '123', 'AB', '', 'DKI', '12/04', 'ciawilor', 'ciawigebang', 'Kuningan', '0871234567', 'Orangtua', 'jamaludin', 'omah', 'sd', 'sd', 'buruh', 'ibu rumah tangga', '', '', '', '', 'sindang barang', '0891238727182', 'Peserta Didik Baru', 'sdn kuningan', '2022-04-04', '', '0000-00-00', '', '2022-04-16', 'C', '1', 'sasa');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pro_pkmb`
+-- Struktur dari tabel `pro_pkmb`
 --
 
 CREATE TABLE `pro_pkmb` (
@@ -111,16 +112,17 @@ CREATE TABLE `pro_pkmb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pro_pkmb`
+-- Dumping data untuk tabel `pro_pkmb`
 --
 
 INSERT INTO `pro_pkmb` (`id_program`, `nama_program`, `deskripsi`, `gambar`) VALUES
-(2, 'Penyluhan', 'penyuhuna agama', 'bd202.png');
+(2, 'Penyluhan', 'penyuhuna agama', 'bd202.png'),
+(3, 'Penyluhan', 'sasasa', 'bayar.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -131,7 +133,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
@@ -141,7 +143,7 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `warga`
+-- Struktur dari tabel `warga`
 --
 
 CREATE TABLE `warga` (
@@ -153,7 +155,7 @@ CREATE TABLE `warga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `warga`
+-- Dumping data untuk tabel `warga`
 --
 
 INSERT INTO `warga` (`id_warga`, `username`, `password`, `jenis_kel`, `usia`) VALUES
@@ -165,65 +167,65 @@ INSERT INTO `warga` (`id_warga`, `username`, `password`, `jenis_kel`, `usia`) VA
 --
 
 --
--- Indexes for table `kelas`
+-- Indeks untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`);
 
 --
--- Indexes for table `pendaftaran`
+-- Indeks untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
   ADD PRIMARY KEY (`id_pendaftaran`);
 
 --
--- Indexes for table `pro_pkmb`
+-- Indeks untuk tabel `pro_pkmb`
 --
 ALTER TABLE `pro_pkmb`
   ADD PRIMARY KEY (`id_program`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `warga`
+-- Indeks untuk tabel `warga`
 --
 ALTER TABLE `warga`
   ADD PRIMARY KEY (`id_warga`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `kelas`
+-- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pendaftaran`
+-- AUTO_INCREMENT untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `pro_pkmb`
+-- AUTO_INCREMENT untuk tabel `pro_pkmb`
 --
 ALTER TABLE `pro_pkmb`
-  MODIFY `id_program` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_program` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `warga`
+-- AUTO_INCREMENT untuk tabel `warga`
 --
 ALTER TABLE `warga`
   MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
