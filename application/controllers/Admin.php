@@ -20,4 +20,14 @@ class Admin extends CI_Controller
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
 	}
+	public function yayasan()
+	{
+		$data = array(
+			'title' => 'Dashboard',
+			'grafik' => $this->m_pendaftaran->grafik(),
+			'grafik_usia' => $this->m_pendaftaran->grafik_usia(),
+			'isi' => 'v_yayasan'
+		);
+		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+	}
 }
