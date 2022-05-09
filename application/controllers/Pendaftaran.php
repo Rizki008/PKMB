@@ -20,6 +20,15 @@ class Pendaftaran extends CI_Controller
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
 	}
+	public function yayasan()
+	{
+		$data = array(
+			'title' => 'Data Pendaftar Baru',
+			'pendaftaran' => $this->m_pendaftaran->pendaftaran(),
+			'isi' => 'layout/yayasan/pendaftaran/v_pendaftaran'
+		);
+		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+	}
 
 	public function detail_pendaftaran($id_pendaftaran = NULL)
 	{
@@ -152,6 +161,26 @@ class Pendaftaran extends CI_Controller
 			'isi' => 'layout/backend/dataterima/v_diterima'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+	}
+
+	public function dataterima_yayasan()
+	{
+		$data = array(
+			'title' => "Data Warga Diterima",
+			'dataterima' => $this->m_pendaftaran->dataterima(),
+			'isi' => 'layout/yayasan/dataterima/v_diterima'
+		);
+		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+	}
+
+	public function datatolak_yayasan()
+	{
+		$data = array(
+			'title' => "Data Warga Tidak Diterima",
+			'dataterima' => $this->m_pendaftaran->datatolak(),
+			'isi' => 'layout/yayasan/dataterima/v_diterima'
+		);
+		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
 	}
 
 	public function notifstatus()
