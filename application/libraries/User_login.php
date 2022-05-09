@@ -25,12 +25,12 @@ class User_login
 			$this->ci->session->set_userdata('password', $password);
 			$this->ci->session->set_userdata('level', $level);
 
-			redirect('admin');
+			// redirect('admin');
 
 			if ($level == 1) {
 				redirect('admin');
 			} elseif ($level == 2) {
-				redirect('yayasan');
+				redirect('admin/yayasan');
 			}
 		} else {
 			$this->ci->session->set_flashdata('pesan', 'Username Atau Password Salah');
