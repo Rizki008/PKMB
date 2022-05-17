@@ -27,12 +27,10 @@
 										<th>Nama Warga</th>
 										<th>Jenis Kelamin</th>
 										<th>Tempat,Tanggal Lahir</th>
-										<th>Warga Negara</th>
 										<th>No HP</th>
 										<th>Desa</th>
-										<th>Masuk Sekolah Ini</th>
 										<th>Tanggal Masuk Sekolah</th>
-										<th>Kelas</th>
+										<th>Pindahan</th>
 										<th>Alasan Diterima/Tidak</th>
 										<th>Action</th>
 									</tr>
@@ -45,13 +43,11 @@
 											<td><?= $value->nama_lengkap ?></td>
 											<td><?= $value->jenis_kel ?></td>
 											<td><?= $value->tempat_lahir ?>, <?= $value->tgl_lahir ?></td>
-											<td><?= $value->warganegara ?></td>
 											<td><?= $value->no_tlpn ?></td>
 											<td><?= $value->desa ?></td>
-											<td><?= $value->msk_sklh ?></td>
 											<td><?= $value->tgl_terima ?></td>
-											<td><?= $value->kelas_terima ?></td>
-											<td><?= $value->alasan ?></td>
+											<td><?= $value->pindahan ?></td>
+											<td><?= $value->alasan_diterima ?></td>
 											<td>
 												<?php if ($value->status == 0) { ?>
 													<a href="<?= base_url('pendaftaran/detail_pendaftaran/' . $value->id_pendaftaran) ?>" class="btn cur-p btn-primary">Detail</a>
@@ -96,12 +92,8 @@
 						<input type="date" name="tgl_terima" value="<?= $value->tgl_terima ?>" class="form-control" placeholder="Tanggal Diterima" required>
 					</div>
 					<div class="form-group">
-						<label>Kelas Di Terima</label>
-						<input type="text" name="kelas_terima" value="<?= $value->kelas_terima ?>" class="form-control" placeholder="Kelas Di Terima" required>
-					</div>
-					<div class="form-group">
 						<label>Alasan Diterima</label>
-						<textarea name="alasan" class="form-control" cols="30" rows="10" placeholder="Alasan Diterima"><?= $value->alasan ?></textarea>
+						<textarea name="alasan_diterima" class="form-control" cols="30" rows="10" placeholder="Alasan Diterima"><?= $value->alasan_diterima ?></textarea>
 					</div>
 				</div>
 				<div class="modal-footer justify-content-between">
@@ -133,7 +125,7 @@
 
 					<div class="form-group">
 						<label>Alasan Tidak Diterima</label>
-						<textarea name="alasan" class="form-control" cols="30" rows="10" placeholder="Alasan Diterima"><?= $value->alasan ?></textarea>
+						<textarea name="alasan_diterima" class="form-control" cols="30" rows="10" placeholder="Alasan Diterima"><?= $value->alasan_diterima ?></textarea>
 					</div>
 				</div>
 				<div class="modal-footer justify-content-between">
