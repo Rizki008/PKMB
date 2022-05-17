@@ -8,6 +8,7 @@ class M_pendaftaran extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
+		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
 		$this->db->order_by('id_pendaftaran', 'desc');
 		return $this->db->get()->result();
 	}
@@ -25,9 +26,11 @@ class M_pendaftaran extends CI_Model
 	public function dataterima()
 	{
 		$this->db->select('*');
-		$this->db->from('pendaftaran');
+		$this->db->from('kelas');
+		$this->db->join('pendaftaran', 'kelas.id_pendaftaran = pendaftaran.id_pendaftaran', 'left');
+		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
 		$this->db->where('status=1');
-		$this->db->order_by('id_pendaftaran', 'desc');
+		$this->db->order_by('pendaftaran.id_pendaftaran', 'desc');
 		return $this->db->get()->result();
 	}
 
@@ -35,8 +38,10 @@ class M_pendaftaran extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
+		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
+		$this->db->join('kelas', 'pendaftaran.id_pendaftaran = kelas.id_pendaftaran', 'left');
 		$this->db->where('status=2');
-		$this->db->order_by('id_pendaftaran', 'desc');
+		$this->db->order_by('pendaftaran.id_pendaftaran', 'desc');
 		return $this->db->get()->result();
 	}
 
@@ -44,6 +49,7 @@ class M_pendaftaran extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
+		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
 		$this->db->where('id_pendaftaran', $id_pendaftaran);
 		return $this->db->get()->row();
 	}
@@ -51,6 +57,11 @@ class M_pendaftaran extends CI_Model
 	public function add($data)
 	{
 		$this->db->insert('pendaftaran', $data);
+	}
+	public function kelas($data)
+	{
+		$this->db->where('id_kelas', $data['id_kelas']);
+		$this->db->update('kelas', $data);
 	}
 
 	public function diterima($data)
