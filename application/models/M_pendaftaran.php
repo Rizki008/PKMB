@@ -12,6 +12,15 @@ class M_pendaftaran extends CI_Model
 		$this->db->order_by('id_pendaftaran', 'desc');
 		return $this->db->get()->result();
 	}
+	public function pendaftaran_yayasan()
+	{
+		$this->db->select('*');
+		$this->db->from('pendaftaran');
+		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
+		$this->db->join('kelas', 'pendaftaran.id_pendaftaran = kelas.id_pendaftaran', 'left');
+		$this->db->order_by('pendaftaran.id_pendaftaran', 'desc');
+		return $this->db->get()->result();
+	}
 
 	public function data_penerimaan()
 	{
