@@ -48,6 +48,12 @@
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
 										<i class="fa fa-user"></i>
+										<input name="nama_lengkap" type="text" value="<?= set_value('nama_lengkap') ?>" placeholder="Nama Lengkap" required>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<i class="fa fa-user"></i>
 										<input name="username" type="text" value="<?= set_value('username') ?>" placeholder="Username" required>
 									</div>
 								</div>
@@ -59,14 +65,26 @@
 								</div>
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
-										<i class="fa fa-envelope"></i>
-										<input type="text" name="jenis_kel" value="<?= set_value('jenis_kel') ?>" placeholder="Jenis kelamin" required>
+										<i class="fa fa-venus-mars"></i>
+										<input type="text" name="jenis_kel" value="<?= set_value('jenis_kel') ?>" placeholder="Laki-laki / Perempuan" required>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
-										<i class="fa fa-envelope"></i>
+										<i class="fa fa-user"></i>
 										<input name="usia" type="number" value="<?= set_value('usia') ?>" placeholder="Usia" required>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<i class="fa fa-phone"></i>
+										<input name="no_tlpn" type="number" value="<?= set_value('no_tlpn') ?>" placeholder="No Telphon" required>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<i class="fa fa-home"></i>
+										<input name="alamat" type="text" value="<?= set_value('alamat') ?>" placeholder="Alamat" required>
 									</div>
 								</div>
 								<div class="col-12">
