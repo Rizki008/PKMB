@@ -17,15 +17,21 @@ class Warga_login
 		if ($cek) {
 			$id_warga = $cek->id_warga;
 			$username = $cek->username;
+			$nama_lengkap = $cek->nama_lengkap;
+			$no_tlpn = $cek->no_tlpn;
+			$alamat = $cek->alamat;
 			$password = $cek->password;
 			$jenis_kel = $cek->jenis_kel;
 			$usia = $cek->usia;
 
 			$this->ci->session->set_userdata('id_warga', $id_warga);
+			$this->ci->session->set_userdata('nama_lengkap', $nama_lengkap);
 			$this->ci->session->set_userdata('username', $username);
 			$this->ci->session->set_userdata('password', $password);
 			$this->ci->session->set_userdata('jenis_kel', $jenis_kel);
 			$this->ci->session->set_userdata('usia', $usia);
+			$this->ci->session->set_userdata('no_tlpn', $no_tlpn);
+			$this->ci->session->set_userdata('alamat', $alamat);
 
 			redirect('home');
 		} else {
