@@ -26,7 +26,6 @@
 										<th>Nama Warga</th>
 										<th>No HP</th>
 										<th>Alamat</th>
-										<th>Masuk Sekolah Ini</th>
 										<th>Tanggal Masuk Sekolah</th>
 										<th>Kelas</th>
 										<th>Alasan Diterima/Tidak</th>
@@ -40,14 +39,13 @@
 											<td><?= $no++ ?></td>
 											<td><?= $value->nama_lengkap ?></td>
 											<td><?= $value->no_tlpn ?></td>
-											<td><?= $value->desa ?></td>
-											<td><?= $value->msk_sklh ?></td>
+											<td><?= $value->alamat ?></td>
 											<td><?= $value->tgl_terima ?></td>
-											<td><?= $value->kelas_terima ?></td>
-											<td><?= $value->alasan ?></td>
+											<td><?= $value->kelas ?></td>
+											<td><?= $value->alasan_diterima ?></td>
 											<td>
-												<?php if ($value->status == 1) { ?>
-													<span class="badge badge-success"> Telah diterima</span>
+												<?php if ($value->status == 2) { ?>
+													<span class="badge badge-danger"> Tidak Diterima</span>
 												<?php } ?>
 											</td>
 										</tr>
