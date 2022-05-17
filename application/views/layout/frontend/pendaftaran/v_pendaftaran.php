@@ -52,25 +52,13 @@
 								<label for="">Nama Lengkap</label>
 								<div class="form-group">
 									<i class="fa fa-user"></i>
-									<input name="nama_lengkap" type="text" placeholder="Nama Lengkap" value="<?= set_value('nama_lengkap') ?>" required>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Nama Panggilan</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="nama_pang" type="text" placeholder="Nama Panggilan" value="<?= set_value('nama_pang') ?>" required>
+									<input name="nama_lengkap" type="type" value="<?= $this->session->userdata('nama_lengkap'); ?>" disabled>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Jenis Kelamin</label>
 								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<select name="jenis_kel" id="jenis_kel" aria-placeholder="Jenis Kelamin">
-										<option>---Jenis Kelamin---</option>
-										<option value="Laki-Laki">Laki-Laki</option>
-										<option value="Perempuan">Perempuan</option>
-									</select>
+									<input name="jenis_kel" type="type" value="<?= $this->session->userdata('jenis_kel'); ?>" disabled>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
@@ -95,216 +83,38 @@
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Kewarganegaraan</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<select name="warganegara" id="warganegara" aria-placeholder="Kewarganegaraan">
-										<option>---Kewarganegaraan---</option>
-										<option value="WNI">WNI</option>
-										<option value="WNA">WNA</option>
-										<option value="Keturunan">Keturunan</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Anak Ke</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="anak_ke" type="number" placeholder="Anak Ke" value="<?= set_value('anak_ke') ?>" required>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Jumnlah Saudara Kandung</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="jml_sdr" type="number" placeholder="Jumlah Saudara Kandung" value="<?= set_value('jml_sdr') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Jumlah Saudara Tiri</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="jml_sdr_tiri" type="number" placeholder="Jumlah Saudara Tiri" value="<?= set_value('jml_sdr_tiri') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Jumlah Saudara Angkat</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="jml_sdr_angkat" type="number" placeholder="Jumlah Saudara angkat" value="<?= set_value('jml_sdr_angkat') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Bahasa Sehari-hari</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="bahasa" type="text" placeholder="Bahasa Sehari-hari" value="<?= set_value('bahasa') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Berat Badan</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="berat_bd" type="number" placeholder="Berat Badan" value="<?= set_value('berat_bd') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Tinggi Badan</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="tinggi_bd" type="nummber" placeholder="Tinggi Badan" value="<?= set_value('tinggi_bd') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Golongan Darah</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<select name="gol_darah" id="gol_darah" aria-placeholder="Golongan Darah">
-										<option>---Golongan Darah---</option>
-										<option value="A">A</option>
-										<option value="AB">AB</option>
-										<option value="B">B</option>
-										<option value="O">O</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Penyakit berat yang pernah diderita</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="penyakit" type="text" placeholder="Penyakit berat yang pernah diderita">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">No Telphone/HP</label>
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="no_tlpn" type="text" value="<?= set_value('no_tlpn') ?>" placeholder="No Telphone/HP">
+									<input name="no_tlpn" type="type" value="<?= $this->session->userdata('no_tlpn'); ?>" disabled>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<label for="">Bertempat Tinggal Pada</label>
-									<i class="fa fa-envelope"></i>
-									<select name="tempat_tinggal" id="tempat_tinggal" aria-placeholder="Bertempat Tinggal Pada">
-										<option>---Bertempat Tinggal Pada---</option>
-										<option value="Orangtua">Orang Tua</option>
-										<option value="Wali">Wali</option>
-										<option value="Menumpang">Menumpang</option>
-										<option value="Asrama">Asrama</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Rt/Rw</label>
+								<label for="">Alamat</label>
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="rt_rw" placeholder="Rt/Rw" value="<?= set_value('rt_rw') ?>">
+									<input name="alamat" type="type" value="<?= $this->session->userdata('alamat') ?>" disabled>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Desa</label>
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="desa" placeholder="Desa." value="<?= set_value('desa') ?>">
+									<input name="desa" placeholder="Desa" value="<?= set_value('desa') ?>" required>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Kecamatan</label>
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="kecamatan" placeholder="Kecamatan." value="<?= set_value('kecamatan') ?>">
+									<input name="kecamatan" placeholder="Kecamatan" value="<?= set_value('kecamatan') ?>" required>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Kabupaten</label>
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="kabupaten" placeholder="Kabupaten." value="<?= set_value('kabupaten') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Provinsi</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="provinsi" placeholder="Provinsi." value="<?= set_value('provinsi') ?>">
-								</div>
-							</div>
-						</div>
-						<br>
-						<br>
-						<h3>-ORANG TUA / WALI</h3>
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="ayah" type="text" placeholder="Nama Ayah Kandung" value="<?= set_value('ayah') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="ibu" type="text" placeholder="Nama Ibu Kandung" value="<?= set_value('ibu') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="sklh_ayah" type="text" placeholder="Pendidikan Tertinggi Ayah" value="<?= set_value('sklh_ayah') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="sklh_ibu" type="text" placeholder="Pendidikan Tertinggi Ibu" value="<?= set_value('sklh_ibu') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="pkrj_ayah" type="text" placeholder="Pekrjaan Ayah" value="<?= set_value('pkrj_ayah') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="pkrj_ibu" type="text" placeholder="Pekerjaan Ibu" value="<?= set_value('pkrj_ibu') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="wali" type="text" placeholder="Nama Wali Peserta Didik" value="<?= set_value('wali') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="sklh_tinggi" type="text" placeholder="Pendidikan Tertinggi" value="<?= set_value('sklh_tinggi') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="hub_peserta" type="text" placeholder="Hubungan Terhadap Peserta Didik" value="<?= set_value('hub_peserta') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="pekerjaan" type="text" placeholder="Pekerjaan Wali" value="<?= set_value('pekerjaan') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="alamat_ortu" type="text" placeholder="Alamat Orang Tua/ Wali" value="<?= set_value('alamat_ortu') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="tlpn" type="text" placeholder="No telephon" value="<?= set_value('tlpn') ?>">
+									<input name="kabupaten" placeholder="Kabupaten" value="<?= set_value('kabupaten') ?>" required>
 								</div>
 							</div>
 						</div>
@@ -313,24 +123,6 @@
 						<h4>-ASAL MULA PERSERTA DIDIK</h4>
 						<br>
 						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Masuk Sekolah ini Sebbagai</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<select name="msk_sklh" id="msk_sklh" aria-placeholder="Masuk Sekolah ini Sebbagai">
-										<option>---Masuk Sekolah ini Sebbagai---</option>
-										<option value="Peserta Didik Baru">Peserta Didik Baru</option>
-										<option value="Pindahan">Pindahan</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Nama Sekolah Terakhir</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="nama_sklh" type="text" placeholder="Nama Sekolah Terakhir" value="<?= set_value('nama_sklh') ?>">
-								</div>
-							</div>
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Tahun Lulus (Ijazah)</label>
 								<div class="form-group">
@@ -342,21 +134,7 @@
 								<label for="">Pindahan Dari Nama Sekolah Asal</label>
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="sklh_asal" type="text" placeholder="Pindahan Dari Nama Sekolah Asal" value="<?= set_value('sklh_asal') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Tanggal Pindah</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="tgl_pindah" type="d" placeholder="Tanggal Pindah" value="<?= set_value('tgl_pindah') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Dari Kelas Pindah</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input name="kelas_pindah" type="text" placeholder="Dari Kelas Pindah" value="<?= set_value('kelas_pindah') ?>">
+									<input name="pindahan" type="text" placeholder="Pindahan Dari Nama Sekolah Asal" value="<?= set_value('pindahan') ?>">
 								</div>
 							</div>
 						</div>
