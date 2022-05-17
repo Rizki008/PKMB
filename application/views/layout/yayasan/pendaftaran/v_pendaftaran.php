@@ -27,14 +27,12 @@
 										<th>Nama Warga</th>
 										<th>Jenis Kelamin</th>
 										<th>Tempat,Tanggal Lahir</th>
-										<th>Warga Negara</th>
 										<th>No HP</th>
 										<th>Desa</th>
-										<th>Masuk Sekolah Ini</th>
-										<th>Tanggal Masuk Sekolah</th>
+										<th>Tanggal Diterima</th>
 										<th>Kelas</th>
 										<th>Alasan Diterima/Tidak</th>
-										<th>Action</th>
+										<td></td>
 									</tr>
 								</thead>
 								<tbody>
@@ -45,19 +43,13 @@
 											<td><?= $value->nama_lengkap ?></td>
 											<td><?= $value->jenis_kel ?></td>
 											<td><?= $value->tempat_lahir ?>, <?= $value->tgl_lahir ?></td>
-											<td><?= $value->warganegara ?></td>
 											<td><?= $value->no_tlpn ?></td>
 											<td><?= $value->desa ?></td>
-											<td><?= $value->msk_sklh ?></td>
 											<td><?= $value->tgl_terima ?></td>
-											<td><?= $value->kelas_terima ?></td>
-											<td><?= $value->alasan ?></td>
+											<td><?= $value->kelas ?></td>
+											<td><?= $value->alasan_diterima ?></td>
 											<td>
-												<?php if ($value->status == 0) { ?>
-													<a href="<?= base_url('pendaftaran/detail_pendaftaran/' . $value->id_pendaftaran) ?>" class="btn cur-p btn-primary">Detail</a>
-													<button data-toggle="modal" data-target="#diterima<?= $value->id_pendaftaran ?>" class="btn cur-p btn-warning">Diterima</button>
-													<button data-toggle="modal" data-target="#ditolak<?= $value->id_pendaftaran ?>" class="btn cur-p btn-danger">Tidak Di terima</button>
-												<?php } elseif ($value->status == 1) { ?>
+												<?php if ($value->status == 1) { ?>
 													<span class="badge badge-success"> Telah diterima</span>
 												<?php } elseif ($value->status == 2) { ?>
 													<span class="badge badge-danger">Tidak Diterima</span>
@@ -74,76 +66,3 @@
 		</div>
 	</div>
 </div>
-
-
-<?php foreach ($pendaftaran as $key => $value) { ?>
-	<div class="modal fade" id="diterima<?= $value->id_pendaftaran ?>">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Alasan Diterima</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<?php
-					echo form_open('pendaftaran/diterima/' . $value->id_pendaftaran);
-					?>
-
-					<div class="form-group">
-						<label>Tanggal Diterima</label>
-						<input type="date" name="tgl_terima" value="<?= $value->tgl_terima ?>" class="form-control" placeholder="Tanggal Diterima" required>
-					</div>
-					<div class="form-group">
-						<label>Kelas Di Terima</label>
-						<input type="text" name="kelas_terima" value="<?= $value->kelas_terima ?>" class="form-control" placeholder="Kelas Di Terima" required>
-					</div>
-					<div class="form-group">
-						<label>Alasan Diterima</label>
-						<textarea name="alasan" class="form-control" cols="30" rows="10" placeholder="Alasan Diterima"><?= $value->alasan ?></textarea>
-					</div>
-				</div>
-				<div class="modal-footer justify-content-between">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Save</button>
-				</div>
-				<?php
-				echo form_close();
-				?>
-			</div>
-		</div>
-	</div>
-<?php } ?>
-
-<?php foreach ($pendaftaran as $key => $value) { ?>
-	<div class="modal fade" id="ditolak<?= $value->id_pendaftaran ?>">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Alasan ditolak</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<?php
-					echo form_open('pendaftaran/ditolak/' . $value->id_pendaftaran);
-					?>
-
-					<div class="form-group">
-						<label>Alasan Tidak Diterima</label>
-						<textarea name="alasan" class="form-control" cols="30" rows="10" placeholder="Alasan Diterima"><?= $value->alasan ?></textarea>
-					</div>
-				</div>
-				<div class="modal-footer justify-content-between">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Save</button>
-				</div>
-				<?php
-				echo form_close();
-				?>
-			</div>
-		</div>
-	</div>
-<?php } ?>
