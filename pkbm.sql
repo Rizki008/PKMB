@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2022 pada 19.24
+-- Waktu pembuatan: 22 Bulan Mei 2022 pada 06.41
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pkmb`
+-- Database: `pkbm`
 --
 
 -- --------------------------------------------------------
@@ -136,7 +136,8 @@ CREATE TABLE `warga` (
 INSERT INTO `warga` (`id_warga`, `nama_lengkap`, `username`, `password`, `jenis_kel`, `usia`, `alamat`, `no_tlpn`) VALUES
 (1, 'diana safitri', 'diana', '12345', 'perempuan', '25', 'kuningan', '085741321452'),
 (2, 'intan sari', 'intan', '12345', 'perempuan', '25', 'sindang barang', '085156727368'),
-(3, 'riki afrizon', 'admin', '12345', 'laki-laki', '25', 'jalaksana', '085745698745');
+(3, 'riki afrizon', 'admin', '12345', 'laki-laki', '25', 'jalaksana', '085745698745'),
+(4, 'adi', 'adi', 'adi', 'laki-laki', '21', 'ciawilor', '085745698745');
 
 --
 -- Indexes for dumped tables
@@ -204,7 +205,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `warga`
 --
 ALTER TABLE `warga`
-  MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
