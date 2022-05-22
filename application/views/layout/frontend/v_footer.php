@@ -74,7 +74,7 @@
 				<div class="col-12">
 					<!-- Copyright -->
 					<div class="copyright">
-						<p>© Copyright Eduland 2019. Design & Development by <a href="http://themelamp.com">www.themelamp.com</a>, Theme Release By <a href="http://codeglim.com">www.codeglim.com</a></p>
+						<!-- <p>© Copyright Eduland 2019. Design & Development by <a href="http://themelamp.com">www.themelamp.com</a>, Theme Release By <a href="http://codeglim.com">www.codeglim.com</a></p> -->
 					</div>
 					<!--/ End Copyright -->
 				</div>

@@ -6,12 +6,12 @@
 			<div class="full">
 				<button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
 				<div class="logo_section">
-					<a href="<?= base_url('admin') ?>"><img class="img-responsive" src="<?= base_url() ?>backend/images/logo/logo.png" alt="#" /></a>
+					<a href="<?= base_url('admin') ?>"><img class="img-responsive" src="<?= base_url() ?>backend/images/logo/sekolah.png" alt="#" /></a>
 				</div>
 				<div class="right_topbar">
 					<div class="icon_info">
 						<ul>
-							<li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+							<li><a href="#"><i class="fa fa-bell-o"></i><span class="badge"></span></a></li>
 						</ul>
 						<ul class="user_profile_dd">
 							<li>

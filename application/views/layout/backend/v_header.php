@@ -6,7 +6,7 @@
 				<div class="sidebar_blog_1">
 					<div class="sidebar-header">
 						<div class="logo_section">
-							<a href="index.html"><img class="logo_icon img-responsive" src="<?= base_url() ?>backend/images/logo/logo_icon.png" alt="#" /></a>
+							<a href="<?= base_url('admin') ?>"><img class="logo_icon img-responsive" src="<?= base_url() ?>backend/images/logo/logo_icon.png" alt="#" /></a>
 						</div>
 					</div>
 					<div class="sidebar_user_info">

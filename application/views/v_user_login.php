@@ -44,7 +44,7 @@
 				<div class="login_section">
 					<div class="logo_login">
 						<div class="center">
-							<img width="210" src="<?= base_url() ?>backend/images/logo/logo.png" alt="#" />
+							<img width="210" src="<?= base_url() ?>backend/images/logo/sekolah.png" alt="#" />
 						</div>
 					</div>
 					<div class="login_form">

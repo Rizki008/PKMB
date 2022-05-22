@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Title -->
-	<title>Eduland &minus; Education & Courses HTML5 Template</title>
+	<title><?= $title ?>e</title>
 
 	<!-- Favicon -->
 	<link rel="icon" type="<?= base_url() ?>frontend/image/png" href="images/favicon.png">

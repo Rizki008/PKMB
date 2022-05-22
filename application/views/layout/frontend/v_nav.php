@@ -10,7 +10,7 @@ $notif = $this->m_pendaftaran->notif();
 				<div class="col-lg-3 col-md-3 col-12">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="<?= base_url() ?>"><img src="<?= base_url() ?>frontend/images/logo.png" alt="#"></a>
+						<a href="<?= base_url() ?>"><img src="<?= base_url() ?>frontend/images/sekolah.png" alt="#"></a>
 					</div>
 					<!--/ End Logo -->
 					<div class="mobile-menu"></div>
@@ -37,8 +37,8 @@ $notif = $this->m_pendaftaran->notif();
 											</ul>
 										<?php } ?>
 									</li>
-									<li><a href="<?= base_url('pendaftaran/pendaftaran') ?>"><i class="fa fa-clone"></i>Pendaftaran PKMB</a></li>
-									<li><a href="<?= base_url('program/program') ?>"><i class="fa fa-bullhorn"></i>Program PKMB</a></li>
+									<li><a href="<?= base_url('pendaftaran/pendaftaran') ?>"><i class="fa fa-clone"></i>Pendaftaran PKBM</a></li>
+									<li><a href="<?= base_url('program/program') ?>"><i class="fa fa-bullhorn"></i>Program PKBM</a></li>
 								</ul>
 								<!-- End Main Menu -->
 							</div>

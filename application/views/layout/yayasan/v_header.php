@@ -26,7 +26,7 @@
 						<li class="active">
 							<a href="<?= base_url('admin/yayasan') ?>"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
 						</li>
-						<li><a href="<?= base_url('pendaftaran/yayasan') ?>"><i class="fa fa-clock-o orange_color"></i> <span>Pendaftaran Warga</span></a></li>
+						<!-- <li><a href="<?= base_url('pendaftaran/yayasan') ?>"><i class="fa fa-clock-o orange_color"></i> <span>Pendaftaran Warga</span></a></li> -->
 						<li>
 							<a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Data Warga</span></a>
 							<ul class="collapse list-unstyled" id="element">
