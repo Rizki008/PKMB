@@ -9,7 +9,8 @@ class M_pendaftaran extends CI_Model
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
 		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
-		$this->db->order_by('id_pendaftaran', 'desc');
+		$this->db->join('kelas', 'pendaftaran.id_pendaftaran = kelas.id_pendaftaran', 'left');
+		$this->db->order_by('pendaftaran.id_pendaftaran', 'desc');
 		return $this->db->get()->result();
 	}
 	public function pendaftaran_yayasan()
@@ -38,6 +39,7 @@ class M_pendaftaran extends CI_Model
 		$this->db->from('kelas');
 		$this->db->join('pendaftaran', 'kelas.id_pendaftaran = pendaftaran.id_pendaftaran', 'left');
 		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
+		$this->db->join('kelas', 'pendaftaran.id_pendaftaran = kelas.id_pendaftaran', 'left');
 		$this->db->where('status=1');
 		$this->db->order_by('pendaftaran.id_pendaftaran', 'desc');
 		return $this->db->get()->result();
@@ -104,8 +106,9 @@ class M_pendaftaran extends CI_Model
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
 		$this->db->where('id_warga', $this->session->userdata('id_warga'));
+		$this->db->join('kelas', 'pendaftaran.id_pendaftaran = kelas.id_pendaftaran', 'left');
 		$this->db->where('status=1');
-		$this->db->group_by('id_pendaftaran', 'desc');
+		$this->db->group_by('pendaftaran.id_pendaftaran', 'desc');
 		return $this->db->get()->result();
 	}
 	public function notiftolak()
