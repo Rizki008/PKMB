@@ -142,7 +142,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<div class="button">
-									<button type="submit" class="btn primary">Daftar PKMB</button>
+									<button type="submit" class="btn primary">Daftar PKBM</button>
 								</div>
 							</div>
 						</div>
