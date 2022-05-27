@@ -40,12 +40,12 @@
 								<div class="event-image">
 									<img src="<?= base_url('frontend/images/events/event3.jpg') ?>" alt="#">
 									<div class="event-date">
-										<p>Kelas <span><?= $value->kelas_terima ?></span></p>
+										<p>Kelas <span><?= $value->kelas ?></span></p>
 									</div>
 								</div>
 								<div class="event-content">
 									<h3 class="event-title"><a href="event-single.html">Selamat Anda Dinyatakan Lolos Dan Diterima Di sekolah Kami</a></h3>
-									<p>Alasan Diterima: <?= $value->alasan ?></p>
+									<p>Alasan Diterima: <?= $value->alasan_diterima ?></p>
 								</div>
 							</div>
 						<?php } ?>
@@ -64,7 +64,7 @@
 							<?php foreach ($notiftolak as $key => $value) { ?>
 								<div class="event-content">
 									<h3 class="event-title"><a href="event-single.html">Mohon Maaf Anda Tidak Diterima</a></h3>
-									<p><?= $value->alasan ?></p>
+									<p><?= $value->alasan_diterima ?></p>
 								</div>
 							<?php } ?>
 						</div>
