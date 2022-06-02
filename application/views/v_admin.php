@@ -196,8 +196,8 @@
 										</script>
 										<?php
 										foreach ($grafik_usia as $key => $value) {
-											$username[] = $value->username;
-											$usia[] = $value->usia;
+											$range_umur[] = $value->range_umur;
+											$jumlah[] = $value->jumlah;
 										}
 										?>
 
@@ -208,10 +208,10 @@
 												var myChart1 = new Chart(ctx, {
 													type: 'bar',
 													data: {
-														labels: <?= json_encode($username) ?>,
+														labels: <?= json_encode($range_umur) ?>,
 														datasets: [{
 															label: 'Grafik Analisis Sesuai Usia',
-															data: <?= json_encode($usia) ?>,
+															data: <?= json_encode($jumlah) ?>,
 															backgroundColor: [
 																'rgba(255, 99, 132, 0.80)',
 																'rgba(54, 162, 235, 0.80)',
