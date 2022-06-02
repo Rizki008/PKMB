@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Bulan Mei 2022 pada 06.41
+-- Waktu pembuatan: 02 Jun 2022 pada 02.27
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -38,8 +38,9 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `id_pendaftaran`, `kelas`) VALUES
-(1, 1, 'c'),
-(2, NULL, 'c');
+(1, 1, NULL),
+(2, 2, 'B'),
+(3, 3, 'A');
 
 -- --------------------------------------------------------
 
@@ -57,6 +58,8 @@ CREATE TABLE `pendaftaran` (
   `kecamatan` varchar(50) DEFAULT NULL,
   `kabupaten` varchar(50) DEFAULT NULL,
   `thn_lulus` date DEFAULT NULL,
+  `paket` varchar(50) DEFAULT NULL,
+  `pendidikan` varchar(25) DEFAULT NULL,
   `tgl_terima` date DEFAULT NULL,
   `pindahan` varchar(125) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
@@ -67,8 +70,10 @@ CREATE TABLE `pendaftaran` (
 -- Dumping data untuk tabel `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_warga`, `tempat_lahir`, `tgl_lahir`, `agama`, `desa`, `kecamatan`, `kabupaten`, `thn_lulus`, `tgl_terima`, `pindahan`, `status`, `alasan_diterima`) VALUES
-(1, 3, 'kuningan', '2022-05-03', 'islam', 'ciawilor', 'ciawigebang', 'Kuningan', '2022-05-18', '2022-05-19', '', '1', 'pinter');
+INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_warga`, `tempat_lahir`, `tgl_lahir`, `agama`, `desa`, `kecamatan`, `kabupaten`, `thn_lulus`, `paket`, `pendidikan`, `tgl_terima`, `pindahan`, `status`, `alasan_diterima`) VALUES
+(1, 1, 'kuningan', '2022-06-09', 'islam', 'sadamantra', 'jalaksana', 'kuningan', '2022-06-17', 'B', 'SD', NULL, '', '2', 'tidak kumplit'),
+(2, 1, 'kuningan', '2022-06-09', 'islam', 'brebes', 'brebes', 'jawa tengan', '2022-06-07', 'B', 'SD', '2022-06-03', '', '1', 'data kumplit'),
+(3, 4, 'kuningan', '2022-06-07', 'islam', 'babakan mulya', 'jalaksana', 'Kuningan', '2022-06-08', 'C', 'SMA', '2022-06-03', '', '1', 'sasa');
 
 -- --------------------------------------------------------
 
@@ -135,9 +140,13 @@ CREATE TABLE `warga` (
 
 INSERT INTO `warga` (`id_warga`, `nama_lengkap`, `username`, `password`, `jenis_kel`, `usia`, `alamat`, `no_tlpn`) VALUES
 (1, 'diana safitri', 'diana', '12345', 'perempuan', '25', 'kuningan', '085741321452'),
-(2, 'intan sari', 'intan', '12345', 'perempuan', '25', 'sindang barang', '085156727368'),
-(3, 'riki afrizon', 'admin', '12345', 'laki-laki', '25', 'jalaksana', '085745698745'),
-(4, 'adi', 'adi', 'adi', 'laki-laki', '21', 'ciawilor', '085745698745');
+(2, 'intan sari', 'intan', '12345', 'perempuan', '20', 'sindang barang', '085156727368'),
+(3, 'riki afrizon', 'admin', '12345', 'laki-laki', '23', 'jalaksana', '085745698745'),
+(4, 'adi', 'adi', 'adi', 'laki-laki', '21', 'ciawilor', '085745698745'),
+(5, 'sasa', 'sasa', 'sasa', 'laki-laki', '15', 'sasa', '085741236985'),
+(6, 'sasaxa', 'adsqw', 'dadsadsaa', 'perempuan', '13', 'dsaeds', '212143124132'),
+(7, 'dfds', 'cxzff', 'fdsfd', 'laki-laki', '30', 'fdsfdsf', '085741236985'),
+(8, 'fdsfds', 'fdfs', 'fdsfad', 'perempuan', '34', 'fcdsfdsc', '1242121431241');
 
 --
 -- Indexes for dumped tables
@@ -181,13 +190,13 @@ ALTER TABLE `warga`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `pro_pkmb`
@@ -205,7 +214,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `warga`
 --
 ALTER TABLE `warga`
-  MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
