@@ -38,7 +38,7 @@ $notif = $this->m_pendaftaran->notif();
 										<?php } ?>
 									</li>
 									<li><a href="<?= base_url('pendaftaran/pendaftaran') ?>"><i class="fa fa-clone"></i>Pendaftaran PKBM</a></li>
-									<li><a href="<?= base_url('program/program') ?>"><i class="fa fa-bullhorn"></i>Program PKBM</a></li>
+									<li><a href="<?= base_url('program/program') ?>"><i class="fa fa-bullhorn"></i>Kegiatan PKBM</a></li>
 								</ul>
 								<!-- End Main Menu -->
 							</div>
