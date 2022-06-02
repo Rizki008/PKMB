@@ -84,6 +84,20 @@
 						<input name="no_tlpn" type="text" class="form-control" value="<?= $pendaftaran->no_tlpn ?>" disabled>
 					</div>
 				</div>
+				<div class="col-sm-4">
+					<!-- text input -->
+					<div class="form-group">
+						<label>Kejar Paket</label>
+						<input name="paket" type="text" class="form-control" value="<?= $pendaftaran->paket ?>" disabled>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<!-- text input -->
+					<div class="form-group">
+						<label>Pendidikan Sebelumnya</label>
+						<input name="pendidikan" type="text" class="form-control" value="<?= $pendaftaran->pendidikan ?>" disabled>
+					</div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
