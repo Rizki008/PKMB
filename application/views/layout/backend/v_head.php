@@ -35,4 +35,5 @@
       <![endif]-->
 	<script src="<?= base_url() ?>backend/chart/dist/Chart.min.js"></script>
 	<script src="<?= base_url() ?>backend/chart/samples/utils.js"></script>
+
 </head>
