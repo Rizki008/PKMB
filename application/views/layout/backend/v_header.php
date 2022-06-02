@@ -28,10 +28,18 @@
 						</li>
 						<li><a href="<?= base_url('pendaftaran') ?>"><i class="fa fa-clock-o orange_color"></i> <span>Pendaftaran Warga</span></a></li>
 						<li>
-							<a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Data Warga</span></a>
+							<a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Data Warga Pendaftar</span></a>
 							<ul class="collapse list-unstyled" id="element">
 								<li><a href="<?= base_url('pendaftaran/dataterima') ?>">> <span>Data Diterima</span></a></li>
 								<li><a href="<?= base_url('pendaftaran/datatolak') ?>">> <span>Data Ditolak</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#alat" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Data Siswa</span></a>
+							<ul class="collapse list-unstyled" id="alat">
+								<li><a href="<?= base_url('siswa/paketa') ?>">> <span>Data Siswa Paket A</span></a></li>
+								<li><a href="<?= base_url('siswa/paketb') ?>">> <span>Data Siswa Paket B</span></a></li>
+								<li><a href="<?= base_url('siswa/paketc') ?>">> <span>Data Siswa Paket C</span></a></li>
 							</ul>
 						</li>
 						<li><a href="<?= base_url('Program') ?>"><i class="fa fa-table purple_color2"></i> <span>Program PKMB</span></a></li>
