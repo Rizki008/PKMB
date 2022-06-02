@@ -23,7 +23,7 @@
 			<div class="col-lg-6 offset-lg-3 col-12">
 				<div class="section-title bg">
 					<h2>Pendaftaran Warga Baru</h2>
-					<p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy</p>
+					<p>Materi program didesain secara mandiri 30% kurikulum nasional 70 % mengutamakan keterampilan produktif dan penopang kewirausahaan (sesuai minat bakat dan usia warga belajar diatas usia sekolah)</p>
 					<div class="icon"><i class="fa fa-paper-plane"></i></div>
 				</div>
 			</div>
@@ -117,7 +117,34 @@
 									<input name="kabupaten" placeholder="Kabupaten" value="<?= set_value('kabupaten') ?>" required>
 								</div>
 							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Kejar Paket</label>
+								<div class="form-group">
+									<!-- <i class="fa fa-user"></i> -->
+									<select name="paket" id="paket">
+										<option>---Pilih Kejar Paket----</option>
+										<option value="A">Paket A</option>
+										<option value="B">Paket B</option>
+										<option value="C">Paket C</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Pendidikan Sebelum-nya</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<select name="pendidikan" id="pendidikan">
+										<option>---Pilih endidikan Sebelum-nya----</option>
+										<option value="SD">SD</option>
+										<option value="SMP">SMP</option>
+										<option value="SMA">SMA</option>
+										<option value="SMK">SMK</option>
+										<option value="S1">Sarjana</option>
+									</select>
+								</div>
+							</div>
 						</div>
+						<br>
 						<br>
 						<br>
 						<h4>-ASAL MULA PERSERTA DIDIK</h4>
@@ -131,10 +158,10 @@
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Pindahan Dari Nama Sekolah Asal</label>
+								<label for="">Asal Sekolah</label>
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
-									<input name="pindahan" type="text" placeholder="Pindahan Dari Nama Sekolah Asal" value="<?= set_value('pindahan') ?>">
+									<input name="pindahan" type="text" placeholder="Asal Sekolah" value="<?= set_value('pindahan') ?>">
 								</div>
 							</div>
 						</div>
@@ -157,14 +184,24 @@
 					<!-- Contact-Info -->
 					<div class="contact-info">
 						<div class="icon"><i class="fa fa-map"></i></div>
-						<h3>Lokasi Sekolah Kami</h3>
-						<p>jl.siliwangi 06 kuningan </p>
+						<h3>Penyelenggaraan Program Pendidikan Kesetaraan</h3>
+						<p>
+							Paket A setara SD/MI <br>
+							Paket B setara SMP/MTS <br>
+							Paket C setara SMA/MA <br>
+						</p>
 					</div>
 					<!-- Contact-Info -->
 					<div class="contact-info">
 						<div class="icon"><i class="fa fa-envelope"></i></div>
 						<h3>kontak informasi</h3>
-						<p>+123 456-7890</p>
+						<p>JL. Pasar Baru, RT.01 RW.01 Dusun Wage <br>
+							Desa Sadamantra <br>
+							Kec. Jalaksana <br>
+							Kab. Kuningan – Jawa Barat <br>
+							Kode Pos : 45554 <br>
+							Telp. 082240627360
+						</p>
 					</div>
 					<!-- Contact-Info -->
 				</div>
