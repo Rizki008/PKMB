@@ -38,7 +38,7 @@
 		<div class="row">
 			<div class="col-lg-6 offset-lg-3 col-12">
 				<div class="section-title bg">
-					<h2>Program PKBM</h2>
+					<h2>Kegiatan PKBM</h2>
 					<p>Pusat Kegiatan Belajar Mengajar (PKBM) Taruna Mandiri sebagai lembaga penyelenggara pendidikan non formal berkomitmen membantu meningkatkan partisipasi masyarakat dalam pelaksanaan pemerataan Pendidikan Nonformal dan terus berupaya menyelenggarakan dan meningkatkan mutu layanan dalam menunjang kemandirian warga belajar berbasis keterampilan produktif</p>
 					<div class="icon"><i class="fa fa-clone"></i></div>
 				</div>
