@@ -35,7 +35,7 @@ class Warga_login
 
 			redirect('home');
 		} else {
-			$this->session->set_flashdata('pesan', 'Username atau Password Salah');
+			$this->ci->session->set_flashdata('pesan', 'Username atau Password Salah');
 			redirect('warga/login');
 		}
 	}
