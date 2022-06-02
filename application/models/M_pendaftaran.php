@@ -35,11 +35,11 @@ class M_pendaftaran extends CI_Model
 
 	public function dataterima()
 	{
+
 		$this->db->select('*');
 		$this->db->from('kelas');
 		$this->db->join('pendaftaran', 'kelas.id_pendaftaran = pendaftaran.id_pendaftaran', 'left');
 		$this->db->join('warga', 'pendaftaran.id_warga = warga.id_warga', 'left');
-		$this->db->join('kelas', 'pendaftaran.id_pendaftaran = kelas.id_pendaftaran', 'left');
 		$this->db->where('status=1');
 		$this->db->order_by('pendaftaran.id_pendaftaran', 'desc');
 		return $this->db->get()->result();
@@ -87,16 +87,31 @@ class M_pendaftaran extends CI_Model
 	}
 	public function grafik_usia()
 	{
-		$this->db->select('*');
-		$this->db->from('warga');
-		$this->db->order_by('usia', 'desc');
-		return $this->db->get()->result();
+		// $this->db->select('*');
+		// $this->db->from('warga');
+		// $this->db->order_by('usia', 'desc');
+		// return $this->db->get()->result();
+		return $this->db->query("SELECT
+		CASE
+			WHEN usia < 20 THEN '... - 20'
+			WHEN usia BETWEEN 20 and 24 THEN '20 - 24'
+			WHEN usia BETWEEN 25 and 29 THEN '25 - 29'
+			WHEN usia >= 30 THEN '30 - ...'
+			WHEN usia IS NULL THEN '(NULL)'
+		END as range_umur,
+		COUNT(*) AS jumlah
+	
+	FROM (select * from warga)  as dummy_table
+	GROUP BY range_umur
+	ORDER BY range_umur")->result();
 	}
 
 	public function notif()
 	{
+		$id_warga = $this->session->userdata('id_warga');
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
+		$this->db->where('pendaftaran.id_warga=', $id_warga);
 		$this->db->group_by('id_pendaftaran');
 		return $this->db->get()->num_rows();
 	}
