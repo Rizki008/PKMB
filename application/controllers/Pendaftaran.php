@@ -50,6 +50,8 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('kabupaten', 'Kabupaten', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('thn_lulus', 'Tahun Lulus', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('paket', 'Kejar Paket', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
+		$this->form_validation->set_rules('pendidikan', 'Pendidikan Sebelumnya', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'title' => 'Pendaftaran Peserta PKMB',
@@ -70,6 +72,8 @@ class Pendaftaran extends CI_Controller
 				'kabupaten' => $this->input->post('kabupaten'),
 				'pindahan' => $this->input->post('pindahan'),
 				'thn_lulus' => $this->input->post('thn_lulus'),
+				'paket' => $this->input->post('paket'),
+				'pendidikan' => $this->input->post('pendidikan'),
 				'tgl_terima' => $this->input->post('tgl_terima'),
 				'alasan_diterima' => $this->input->post('alasan_diterima'),
 				'pindahan' => $this->input->post('pindahan'),
@@ -115,7 +119,7 @@ class Pendaftaran extends CI_Controller
 		$data = array(
 			'id_pendaftaran' => $id_pendaftaran,
 			'status' => 2,
-			'alasan' => $this->input->post('alasan'),
+			'alasan_diterima' => $this->input->post('alasan_diterima'),
 		);
 		$this->m_pendaftaran->diterima($data);
 		$this->session->set_flashdata('pesan', 'Data Berhasil Di Update');
