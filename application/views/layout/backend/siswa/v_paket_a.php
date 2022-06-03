@@ -43,7 +43,11 @@
                                             <td><?= $value->tempat_lahir ?> | <?= $value->tgl_lahir ?></td>
                                             <td><?= $value->kelas ?> </td>
                                             <td><?= $value->paket ?> </td>
-                                            <td><?= $value->semester ?> </td>
+                                            <td><?php if ($value->semester_genap) { ?>
+                                                    <?= $value->semester_genap ?>
+                                                <?php } elseif ($value->semester_ganjil) { ?>
+                                                    / <?= $value->semester_ganjil ?>
+                                                <?php } ?> </td>
                                             <td>
                                                 <a href="<?= base_url('siswa/updatea/' . $value->id_siswa) ?>" class="btn btn-warning"><i class="fa fa-pencil"></i>Update</a>
                                                 <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_siswa ?>"><i class="fa fa-trash"></i>Delete</button>
