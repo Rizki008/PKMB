@@ -15,7 +15,13 @@ class Admin extends CI_Controller
 		$data = array(
 			'title' => 'Dashboard',
 			'grafik' => $this->m_pendaftaran->grafik(),
+			'total_pendaftar' => $this->m_pendaftaran->total_pendaftar(),
+			'total_warga' => $this->m_pendaftaran->total_warga(),
+			'total_kelas' => $this->m_pendaftaran->total_kelas(),
+			'total_program' => $this->m_pendaftaran->total_program(),
 			'grafik_usia' => $this->m_pendaftaran->grafik_usia(),
+			'gafik_genap' => $this->m_pendaftaran->gafik_genap(),
+			'gafik_ganjil' => $this->m_pendaftaran->gafik_ganjil(),
 			'isi' => 'v_admin'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);

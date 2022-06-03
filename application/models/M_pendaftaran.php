@@ -4,6 +4,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_pendaftaran extends CI_Model
 {
+	public function total_pendaftar()
+	{
+		return $this->db->get('pendaftaran')->num_rows();
+	}
+	public function total_warga()
+	{
+		return $this->db->get('siswa')->num_rows();
+	}
+	public function total_kelas()
+	{
+		return $this->db->get('kelas')->num_rows();
+	}
+	public function total_program()
+	{
+		return $this->db->get('pro_pkmb')->num_rows();
+	}
 	public function pendaftaran()
 	{
 		$this->db->select('*');
@@ -84,6 +100,14 @@ class M_pendaftaran extends CI_Model
 	public function grafik()
 	{
 		return $this->db->query('SELECT COUNT(kecamatan)AS total, pendaftaran.kecamatan FROM `pendaftaran` GROUP BY kecamatan;')->result();
+	}
+	public function gafik_genap()
+	{
+		return $this->db->query("SELECT COUNT(semester_genap)AS total_genap, siswa.semester_genap FROM `siswa` WHERE semester_genap='genap' GROUP BY semester_genap;")->result();
+	}
+	public function gafik_ganjil()
+	{
+		return $this->db->query("SELECT COUNT(semester_ganjil)AS total_ganjil, siswa.semester_ganjil FROM `siswa` WHERE semester_ganjil='ganjil' GROUP BY semester_ganjil;")->result();
 	}
 	public function grafik_usia()
 	{
