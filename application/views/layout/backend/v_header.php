@@ -42,7 +42,7 @@
 								<li><a href="<?= base_url('siswa/paketc') ?>">> <span>Data Siswa Paket C</span></a></li>
 							</ul>
 						</li>
-						<li><a href="<?= base_url('Program') ?>"><i class="fa fa-table purple_color2"></i> <span>Program PKMB</span></a></li>
+						<li><a href="<?= base_url('Program') ?>"><i class="fa fa-table purple_color2"></i> <span>Kegiatan PKMB</span></a></li>
 					</ul>
 				</div>
 			</nav>
