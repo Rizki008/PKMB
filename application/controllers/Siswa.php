@@ -52,7 +52,6 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('kelas', 'Kelas siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('paket', 'paket siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
-        $this->form_validation->set_rules('semester', 'Semester', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
 
 
         if ($this->form_validation->run() ==  FALSE) {
@@ -69,7 +68,8 @@ class Siswa extends CI_Controller
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
                 'kelas' => $this->input->post('kelas'),
                 'paket' => $this->input->post('paket'),
-                'semester' => $this->input->post('semester'),
+                'semester_genap' => $this->input->post('semester_genap'),
+                'semester_ganjil' => $this->input->post('semester_ganjil'),
             );
             $this->m_siswa->adda($data);
             $this->session->set_flashdata('pesan', 'data berhasil di tambah');
@@ -91,7 +91,6 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('kelas', 'Kelas siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('paket', 'paket siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
-        $this->form_validation->set_rules('semester', 'Semester', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
 
 
         if ($this->form_validation->run() ==  FALSE) {
@@ -110,7 +109,8 @@ class Siswa extends CI_Controller
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
                 'kelas' => $this->input->post('kelas'),
                 'paket' => $this->input->post('paket'),
-                'semester' => $this->input->post('semester'),
+                'semester_genap' => $this->input->post('semester_genap'),
+                'semester_ganjil' => $this->input->post('semester_ganjil'),
             );
             $this->m_siswa->update($data);
             $this->session->set_flashdata('pesan', 'data berhasil di Update');
@@ -143,7 +143,6 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('kelas', 'Kelas siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('paket', 'paket siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
-        $this->form_validation->set_rules('semester', 'Semester', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
 
 
         if ($this->form_validation->run() ==  FALSE) {
@@ -160,7 +159,8 @@ class Siswa extends CI_Controller
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
                 'kelas' => $this->input->post('kelas'),
                 'paket' => $this->input->post('paket'),
-                'semester' => $this->input->post('semester'),
+                'semester_genap' => $this->input->post('semester_genap'),
+                'semester_ganjil' => $this->input->post('semester_ganjil'),
             );
             $this->m_siswa->adda($data);
             $this->session->set_flashdata('pesan', 'data berhasil di tambah');
@@ -182,7 +182,6 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('kelas', 'Kelas siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('paket', 'paket siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
-        $this->form_validation->set_rules('semester', 'Semester', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
 
 
         if ($this->form_validation->run() ==  FALSE) {
@@ -201,7 +200,8 @@ class Siswa extends CI_Controller
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
                 'kelas' => $this->input->post('kelas'),
                 'paket' => $this->input->post('paket'),
-                'semester' => $this->input->post('semester'),
+                'semester_genap' => $this->input->post('semester_genap'),
+                'semester_ganjil' => $this->input->post('semester_ganjil'),
             );
             $this->m_siswa->update($data);
             $this->session->set_flashdata('pesan', 'data berhasil di Update');
@@ -234,7 +234,6 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('kelas', 'Kelas siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('paket', 'paket siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
-        $this->form_validation->set_rules('semester', 'Semester', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
 
 
         if ($this->form_validation->run() ==  FALSE) {
@@ -251,7 +250,8 @@ class Siswa extends CI_Controller
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
                 'kelas' => $this->input->post('kelas'),
                 'paket' => $this->input->post('paket'),
-                'semester' => $this->input->post('semester'),
+                'semester_genap' => $this->input->post('semester_genap'),
+                'semester_ganjil' => $this->input->post('semester_ganjil'),
             );
             $this->m_siswa->adda($data);
             $this->session->set_flashdata('pesan', 'data berhasil di tambah');
@@ -273,7 +273,6 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('kelas', 'Kelas siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
         $this->form_validation->set_rules('paket', 'paket siswa', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
-        $this->form_validation->set_rules('semester', 'Semester', 'required', array('required' => '%s Mohon Untuk Diiis!!',));
 
 
         if ($this->form_validation->run() ==  FALSE) {
@@ -292,7 +291,8 @@ class Siswa extends CI_Controller
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
                 'kelas' => $this->input->post('kelas'),
                 'paket' => $this->input->post('paket'),
-                'semester' => $this->input->post('semester'),
+                'semester_genap' => $this->input->post('semester_genap'),
+                'semester_ganjil' => $this->input->post('semester_ganjil'),
             );
             $this->m_siswa->update($data);
             $this->session->set_flashdata('pesan', 'data berhasil di Update');

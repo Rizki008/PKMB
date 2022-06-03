@@ -56,8 +56,12 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label>Semester</label>
-				<input name="semester" type="text" class="form-control" placeholder="Semester" value="<?= set_value('semester') ?>">
+				<label>Semester Genap</label>
+				<input name="semester_genap" type="text" class="form-control" placeholder="Semester Genap" value="<?= set_value('semester_genap') ?>">
+			</div>
+			<div class="form-group">
+				<label>Semester Ganjil</label>
+				<input name="semester_ganjil" type="text" class="form-control" placeholder="Semester Ganjil" value="<?= set_value('semester_ganjil') ?>">
 			</div>
 
 

@@ -58,8 +58,12 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label>Semester</label>
-				<input name="semester" type="text" class="form-control" placeholder="Semester" value="<?= $siswa->semester ?>">
+				<label>Semester Genap</label>
+				<input name="semester_genap" type="text" class="form-control" placeholder="Semester" value="<?= $siswa->semester_genap ?>">
+			</div>
+			<div class="form-group">
+				<label>Semester Ganjil</label>
+				<input name="semester_ganjil" type="text" class="form-control" placeholder="Semester" value="<?= $siswa->semester_ganjil ?>">
 			</div>
 
 			<div class="form-group">
