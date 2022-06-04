@@ -117,6 +117,13 @@
 									<input name="kabupaten" placeholder="Kabupaten" value="<?= set_value('kabupaten') ?>" required>
 								</div>
 							</div>
+						</div>
+						<br>
+						<br>
+						<br>
+						<h4>-ASAL MULA PESERTA DIDIK</h4>
+						<br>
+						<div class="row">
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Kejar Paket</label>
 								<div class="form-group">
@@ -135,21 +142,12 @@
 									<i class="fa fa-envelope"></i>
 									<select name="pendidikan" id="pendidikan">
 										<option>---Pilih endidikan Sebelum-nya----</option>
+										<option value="Belum Sekolah">Belum Sekolah</option>
 										<option value="SD">SD</option>
 										<option value="SMP">SMP</option>
-										<option value="SMA">SMA</option>
-										<option value="SMK">SMK</option>
-										<option value="S1">Sarjana</option>
 									</select>
 								</div>
 							</div>
-						</div>
-						<br>
-						<br>
-						<br>
-						<h4>-ASAL MULA PERSERTA DIDIK</h4>
-						<br>
-						<div class="row">
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Tahun Lulus (Ijazah)</label>
 								<div class="form-group">
