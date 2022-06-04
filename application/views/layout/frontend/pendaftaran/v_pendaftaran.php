@@ -36,13 +36,13 @@
 					//notifikasi form kosong
 					echo validation_errors('<div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h5><i class="icon fas fa-exclamation-triangle"></i>', '</h5></div>');
+            <h5><i class="icon fa fa-exclamation-triangle"></i>', '</h5></div>');
 
 					//notifikasi gagal upload gambar
 					if (isset($error_upload)) {
 						echo '<div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h5><i class="icon fas fa-exclamation-triangle"></i>' . $error_upload . '</h5></div>';
+                <h5><i class="icon fa fa-exclamation-triangle"></i>' . $error_upload . '</h5></div>';
 					} ?>
 					<form class="form" action="<?= base_url('pendaftaran/pendaftaran') ?>" method="POST">
 						<h3>-KETERANGAN WARGA BELAJAR</h3>
@@ -165,6 +165,9 @@
 								</div>
 							</div>
 						</div>
+						<br>
+						<br>
+
 						<input type="text" value="<?= $this->session->userdata('id_warga') ?>" hidden>
 						<div class="col-12">
 							<div class="form-group">
