@@ -130,6 +130,15 @@ class M_pendaftaran extends CI_Model
 	ORDER BY range_umur")->result();
 	}
 
+	public function lulus_tahunan($tahun)
+	{
+		$this->db->select('*');
+		$this->db->from('siswa');
+		$this->db->where('YEAR(tgl_lulus)', $tahun);
+		$this->db->order_by('tgl_lulus', 'desc');
+		return $this->db->get()->result();
+	}
+
 	public function notif()
 	{
 		$id_warga = $this->session->userdata('id_warga');
