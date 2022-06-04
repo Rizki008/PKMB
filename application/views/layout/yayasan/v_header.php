@@ -34,6 +34,13 @@
 								<li><a href="<?= base_url('pendaftaran/datatolak_yayasan') ?>">> <span>Data Ditolak</span></a></li>
 							</ul>
 						</li>
+						<li>
+							<a href="#elemente" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Data Analisis Semester</span></a>
+							<ul class="collapse list-unstyled" id="elemente">
+								<li><a href="<?= base_url('admin/semester_genap') ?>">> <span>Semester Genap</span></a></li>
+								<li><a href="<?= base_url('admin/semester_ganjil') ?>">> <span>Semester Ganjil</span></a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</nav>
