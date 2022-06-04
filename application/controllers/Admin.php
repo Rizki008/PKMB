@@ -31,6 +31,7 @@ class Admin extends CI_Controller
 	}
 	public function yayasan()
 	{
+		$tahun = $this->input->post('tahun');
 		$data = array(
 			'title' => 'Dashboard',
 			'total_pendaftar' => $this->m_pendaftaran->total_pendaftar(),
@@ -41,6 +42,8 @@ class Admin extends CI_Controller
 			'grafik_usia' => $this->m_pendaftaran->grafik_usia(),
 			'gafik_genap' => $this->m_pendaftaran->gafik_genap(),
 			'gafik_ganjil' => $this->m_pendaftaran->gafik_ganjil(),
+			'tahun' => $tahun,
+			'kelulusan' => $this->m_pendaftaran->lulus_tahunan($tahun),
 			'isi' => 'v_yayasan'
 		);
 		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
@@ -57,5 +60,17 @@ class Admin extends CI_Controller
 			'isi' => 'layout/backend/kelulusan/v_lulusan_tahunan'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+	}
+	public function lulus_tahunan_yayasan()
+	{
+		$tahun = $this->input->post('tahun');
+
+		$data = array(
+			'title' => 'Data Kelulusan Pertahun',
+			'tahun' => $tahun,
+			'kelulusan' => $this->m_pendaftaran->lulus_tahunan($tahun),
+			'isi' => 'layout/yayasan/kelulusan/v_lulusan_tahunan'
+		);
+		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
 	}
 }
