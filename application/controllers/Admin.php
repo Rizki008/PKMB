@@ -73,4 +73,26 @@ class Admin extends CI_Controller
 		);
 		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
 	}
+
+	public function semester_genap()
+	{
+		$data = array(
+			'title' => 'Analisis data semester genap',
+			'gafik_genap' => $this->m_pendaftaran->gafik_genap_alamat(),
+			'gafik_genap_usia' => $this->m_pendaftaran->gafik_genap_usia(),
+			'isi' => 'layout/yayasan/analisis/v_analisis_genap'
+		);
+		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+	}
+
+	public function semester_ganjil()
+	{
+		$data = array(
+			'title' => 'Analisis data semester genap',
+			'gafik_ganjil' => $this->m_pendaftaran->gafik_ganjil_alamat(),
+			'gafik_ganjil_usia' => $this->m_pendaftaran->gafik_ganjil_usia(),
+			'isi' => 'layout/yayasan/analisis/v_analisis_ganjil'
+		);
+		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+	}
 }

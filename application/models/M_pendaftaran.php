@@ -109,6 +109,28 @@ class M_pendaftaran extends CI_Model
 	{
 		return $this->db->query("SELECT COUNT(semester_ganjil)AS total_ganjil, siswa.semester_ganjil FROM `siswa` WHERE semester_ganjil='ganjil' GROUP BY semester_ganjil;")->result();
 	}
+	public function gafik_ganjil_alamat()
+	{
+		return $this->db->query("SELECT tempat_lahir, 
+		COUNT(semester_ganjil) as total_ganjil
+FROM siswa WHERE semester_ganjil='ganjil'
+GROUP BY tempat_lahir;")->result();
+	}
+	public function gafik_genap_alamat()
+	{
+		return $this->db->query("SELECT tempat_lahir, 
+		COUNT(semester_genap) as total_genap
+FROM siswa WHERE semester_genap='genap'
+GROUP BY tempat_lahir;")->result();
+	}
+	public function gafik_genap_usia()
+	{
+		return $this->db->query("SELECT TIMESTAMPDIFF(YEAR, tgl_lahir, curdate()) AS umur  FROM siswa WHERE semester_genap='genap' GROUP BY umur ORDER BY umur;")->result();
+	}
+	public function gafik_ganjil_usia()
+	{
+		return $this->db->query("SELECT TIMESTAMPDIFF(YEAR, tgl_lahir, curdate()) AS umur  FROM siswa WHERE semester_ganjil='ganjil' GROUP BY umur ORDER BY umur;")->result();
+	}
 	public function grafik_usia()
 	{
 		// $this->db->select('*');
