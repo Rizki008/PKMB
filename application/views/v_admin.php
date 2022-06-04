@@ -71,6 +71,34 @@
 			</div>
 		</div>
 
+		<div class="card-body">
+			<?php
+			echo form_open('admin/lulus_tahunan') ?>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label>Data Kelulusan Per Tahun</label>
+						<select name="tahun" class="form-control">
+							<?php
+							$mulai = date('Y') - 1;
+							for ($i = $mulai; $i < $mulai + 10; $i++) {
+								$sel = $i == date('Y') ? 'selected="selected"' : '';
+								echo '<option value="' . $i . '"' . $sel . '>' . $i . '</option>';
+							}
+							?>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-print"></i> Cetak Data Kelulusan</button>
+					</div>
+				</div>
+			</div>
+			<?php
+			echo form_close() ?>
+		</div>
+
 		<div class="row column1">
 			<div class="col-lg-6">
 				<div class="white_shd full margin_bottom_30">
