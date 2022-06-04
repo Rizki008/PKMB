@@ -138,7 +138,7 @@ class Pendaftaran extends CI_Controller
 		$data = array(
 			'title' => "Data Warga Tidak Diterima",
 			'dataterima' => $this->m_pendaftaran->datatolak(),
-			'isi' => 'layout/backend/dataterima/v_diterima'
+			'isi' => 'layout/backend/dataterima/v_ditolak'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
 	}
@@ -158,7 +158,7 @@ class Pendaftaran extends CI_Controller
 		$data = array(
 			'title' => "Data Warga Tidak Diterima",
 			'dataterima' => $this->m_pendaftaran->datatolak(),
-			'isi' => 'layout/yayasan/dataterima/v_diterima'
+			'isi' => 'layout/yayasan/dataterima/v_ditolak'
 		);
 		$this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
 	}

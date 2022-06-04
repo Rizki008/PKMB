@@ -26,22 +26,18 @@
 										<th>Nama Warga</th>
 										<th>No HP</th>
 										<th>Alamat</th>
-										<th>Tanggal Diterima</th>
-										<th>Kelas</th>
-										<th>Alasan Diterima/Tidak</th>
+										<th>Alasan Ditolak</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php $no = 1;
-									foreach ($datatolak as $key => $value) { ?>
+									foreach ($dataterima as $key => $value) { ?>
 										<tr>
 											<td><?= $no++ ?></td>
 											<td><?= $value->nama_lengkap ?></td>
 											<td><?= $value->no_tlpn ?></td>
 											<td><?= $value->desa ?></td>
-											<td><?= $value->tgl_terima ?></td>
-											<td><?= $value->kelas ?></td>
 											<td><?= $value->alasan_diterima ?></td>
 											<td>
 												<?php if ($value->status == 2) { ?>
