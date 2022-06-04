@@ -61,9 +61,6 @@ class Pendaftaran extends CI_Controller
 		} else {
 			$data = array(
 				'id_warga' => $this->session->userdata('id_warga'),
-				// 'nama_lengkap' => $this->session->userdata('nama_lengkap'),
-				// 'no_tlpn' => $this->session->userdata('no_tlpn'),
-				// 'jenis_kel' => $this->session->userdata('jenis_kel'),
 				'tempat_lahir' => $this->input->post('tempat_lahir'),
 				'tgl_lahir' => $this->input->post('tgl_lahir'),
 				'agama' => $this->input->post('agama'),
