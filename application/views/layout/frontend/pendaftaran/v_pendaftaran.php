@@ -43,8 +43,9 @@
 						echo '<div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h5><i class="icon fa fa-exclamation-triangle"></i>' . $error_upload . '</h5></div>';
-					} ?>
-					<form class="form" action="<?= base_url('pendaftaran/pendaftaran') ?>" method="POST">
+					}
+					echo form_open_multipart('pendaftaran/pendaftaran') ?>
+					<form class="form">
 						<h3>-KETERANGAN WARGA BELAJAR</h3>
 						<br>
 						<div class="row">
@@ -117,13 +118,6 @@
 									<input name="kabupaten" placeholder="Kabupaten" value="<?= set_value('kabupaten') ?>" required>
 								</div>
 							</div>
-						</div>
-						<br>
-						<br>
-						<br>
-						<h4>-ASAL MULA PESERTA DIDIK</h4>
-						<br>
-						<div class="row">
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Kejar Paket</label>
 								<div class="form-group">
@@ -136,6 +130,14 @@
 									</select>
 								</div>
 							</div>
+						</div>
+						<br>
+						<br>
+						<br>
+						<h4>-ASAL MULA PESERTA DIDIK</h4>
+						<br>
+						<div class="row">
+
 							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Pendidikan Sebelum-nya</label>
 								<div class="form-group">
@@ -160,6 +162,27 @@
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
 									<input name="pindahan" type="text" placeholder="Asal Sekolah" value="<?= set_value('pindahan') ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Upload Syarat Ijazah</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<input type="file" name="ijazah" id="preview_gambar">
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Upload Syarat Akteu</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<input type="file" name="akteu" id="preview_gambar">
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Upload Syarat Nilai Raport</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<input type="file" name="nilai_raport" id="preview_gambar">
 								</div>
 							</div>
 						</div>
