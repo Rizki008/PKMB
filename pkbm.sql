@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jun 2022 pada 16.31
+-- Waktu pembuatan: 06 Jun 2022 pada 03.08
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -43,7 +43,20 @@ INSERT INTO `kelas` (`id_kelas`, `id_pendaftaran`, `kelas`) VALUES
 (3, 3, 'A'),
 (4, 4, NULL),
 (5, 5, NULL),
-(6, 6, NULL);
+(6, 6, NULL),
+(7, 7, NULL),
+(8, 8, NULL),
+(9, 9, NULL),
+(10, 10, NULL),
+(11, 11, NULL),
+(12, 12, NULL),
+(13, 13, NULL),
+(14, 14, NULL),
+(15, 15, NULL),
+(16, 16, NULL),
+(17, 17, NULL),
+(18, 18, NULL),
+(19, 19, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,7 +96,20 @@ INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_warga`, `tempat_lahir`, `tgl_la
 (3, 4, 'kuningan', '2022-06-07', 'islam', 'babakan mulya', 'jalaksana', 'Kuningan', '2022-06-08', 'C', 'SMA', '2022-06-03', '', NULL, NULL, NULL, NULL, '1', 'sasa'),
 (4, 1, 'kuningan', '2022-06-02', 'islam', 'sindang agung', 'sindang agung', 'Kuningan', '2022-06-08', 'B', 'SMP', NULL, 'smk kuningan', NULL, NULL, NULL, 'Pagar-Besi-Hollow-Galvanis.jpg', '2', 'fdsfdsf'),
 (5, 1, 'kuningan', '2022-06-10', 'islam', 'cimaranten', 'cimaranten', 'Kuningan', '2022-06-09', 'C', 'SMP', '2022-06-09', 'smk kuningan', NULL, NULL, NULL, NULL, '1', 'dsadsa'),
-(6, 1, 'kuningan', '2022-06-14', 'islam', 'ciawilor', 'cimaranten', 'Jakarta', '2022-06-09', 'A', 'SD', NULL, '', NULL, NULL, NULL, NULL, '0', NULL);
+(6, 1, 'kuningan', '2022-06-14', 'islam', 'ciawilor', 'cimaranten', 'Jakarta', '2022-06-09', 'A', 'SD', NULL, '', NULL, NULL, NULL, NULL, '0', NULL),
+(7, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', NULL),
+(8, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', NULL),
+(9, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(10, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(11, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(12, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(13, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(14, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(15, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(16, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(17, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '0', NULL),
+(18, 5, 'kuningan', '2022-06-08', 'islam', 'ciawilor', 'ciawigebang', 'Kuningan', '2022-06-07', 'A', 'Belum Sekolah', NULL, 'smk kuningan', 'pagar.jpg', NULL, NULL, NULL, '0', NULL),
+(19, 5, 'kuningan', '2022-06-07', 'islam', 'ciawilor', 'jalaksana', 'Kuningan', '2022-06-08', 'A', 'Belum Sekolah', NULL, 'smk kuningan', 'pagar1.jpg', 'pagar1.jpg', 'pagar1.jpg', NULL, '0', NULL);
 
 -- --------------------------------------------------------
 
@@ -521,13 +547,13 @@ ALTER TABLE `warga`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `pro_pkmb`
