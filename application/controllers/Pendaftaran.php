@@ -52,40 +52,58 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('thn_lulus', 'Tahun Lulus', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('paket', 'Kejar Paket', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		$this->form_validation->set_rules('pendidikan', 'Pendidikan Sebelumnya', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
-		if ($this->form_validation->run() == FALSE) {
-			$data = array(
-				'title' => 'Pendaftaran Peserta PKMB',
-				'isi' => 'layout/frontend/pendaftaran/v_pendaftaran'
-			);
-			$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
-		} else {
-			$data = array(
-				'id_warga' => $this->session->userdata('id_warga'),
-				'tempat_lahir' => $this->input->post('tempat_lahir'),
-				'tgl_lahir' => $this->input->post('tgl_lahir'),
-				'agama' => $this->input->post('agama'),
-				'desa' => $this->input->post('desa'),
-				'kecamatan' => $this->input->post('kecamatan'),
-				'kabupaten' => $this->input->post('kabupaten'),
-				'pindahan' => $this->input->post('pindahan'),
-				'thn_lulus' => $this->input->post('thn_lulus'),
-				'paket' => $this->input->post('paket'),
-				'pendidikan' => $this->input->post('pendidikan'),
-				'tgl_terima' => $this->input->post('tgl_terima'),
-				'alasan_diterima' => $this->input->post('alasan_diterima'),
-				'pindahan' => $this->input->post('pindahan'),
-				'status' => 0,
-			);
-			$this->m_pendaftaran->add($data);
+		if ($this->form_validation->run() == TRUE) {
+			$config['upload_path'] = './assets/syarat';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['max_size']  = '5000';
+			$this->upload->initialize($config);
+			$field_name = "ijazah";
+			if (!$this->upload->do_upload($field_name)) {
+				$data = array(
+					'title' => 'Pendaftaran Peserta PKMB',
+					'isi' => 'layout/frontend/pendaftaran/v_pendaftaran'
+				);
+				$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
+			} else {
+				$upload_data = array('uploads' => $this->upload->data());
+				$config['image_library'] = 'gd2';
+				$config['source_image'] = './assets/syarat/' . $upload_data['uploads']['file_name'];
+				$this->load->library('image_lib', $config);
+				$data = array(
+					'id_warga' => $this->session->userdata('id_warga'),
+					'tempat_lahir' => $this->input->post('tempat_lahir'),
+					'tgl_lahir' => $this->input->post('tgl_lahir'),
+					'agama' => $this->input->post('agama'),
+					'desa' => $this->input->post('desa'),
+					'kecamatan' => $this->input->post('kecamatan'),
+					'kabupaten' => $this->input->post('kabupaten'),
+					'pindahan' => $this->input->post('pindahan'),
+					'thn_lulus' => $this->input->post('thn_lulus'),
+					'paket' => $this->input->post('paket'),
+					'pendidikan' => $this->input->post('pendidikan'),
+					'tgl_terima' => $this->input->post('tgl_terima'),
+					'alasan_diterima' => $this->input->post('alasan_diterima'),
+					'ijazah' => $upload_data['uploads']['file_name'],
+					'akteu' => $upload_data['uploads']['file_name'],
+					'nilai_raport' => $upload_data['uploads']['file_name'],
+					'status' => 0,
+				);
+				$this->m_pendaftaran->add($data);
 
-			$last_id = $this->db->insert_id();
-			$data_kelas = array(
-				'id_pendaftaran' => $last_id,
-			);
-			$this->db->insert('kelas', $data_kelas);
-			$this->session->set_flashdata('pesan', 'Berhasil Daftar');
-			redirect('home');
+				$last_id = $this->db->insert_id();
+				$data_kelas = array(
+					'id_pendaftaran' => $last_id,
+				);
+				$this->db->insert('kelas', $data_kelas);
+				$this->session->set_flashdata('pesan', 'Berhasil Daftar');
+				redirect('home');
+			}
 		}
+		$data = array(
+			'title' => 'Pendaftaran Peserta PKMB',
+			'isi' => 'layout/frontend/pendaftaran/v_pendaftaran'
+		);
+		$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
 	}
 
 	public function diterima($id_pendaftaran = NULL)
@@ -174,14 +192,4 @@ class Pendaftaran extends CI_Controller
 		);
 		$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
 	}
-
-	// public function notiftolak()
-	// {
-	// 	$data = array(
-	// 		'title' => "Data Warga Tidak Diterima",
-	// 		'dataterima' => $this->m_pendaftaran->datatolak(),
-	// 		'isi' => 'layout/frontend/dataterima/v_diterima'
-	// 	);
-	// 	$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
-	// }
 }
