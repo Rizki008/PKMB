@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jun 2022 pada 03.08
+-- Waktu pembuatan: 09 Jun 2022 pada 02.01
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -482,22 +482,23 @@ CREATE TABLE `warga` (
   `jenis_kel` varchar(20) DEFAULT NULL,
   `usia` varchar(20) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
-  `no_tlpn` varchar(15) DEFAULT NULL
+  `no_tlpn` varchar(15) DEFAULT NULL,
+  `tgl_daftar` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `warga`
 --
 
-INSERT INTO `warga` (`id_warga`, `nama_lengkap`, `username`, `password`, `jenis_kel`, `usia`, `alamat`, `no_tlpn`) VALUES
-(1, 'diana safitri', 'diana', '12345', 'perempuan', '25', 'kuningan', '085741321452'),
-(2, 'intan sari', 'intan', '12345', 'perempuan', '20', 'sindang barang', '085156727368'),
-(3, 'riki afrizon', 'admin', '12345', 'laki-laki', '23', 'jalaksana', '085745698745'),
-(4, 'adi', 'adi', 'adi', 'laki-laki', '21', 'ciawilor', '085745698745'),
-(5, 'sasa', 'sasa', 'sasa', 'laki-laki', '15', 'sasa', '085741236985'),
-(6, 'sasaxa', 'adsqw', 'dadsadsaa', 'perempuan', '13', 'dsaeds', '212143124132'),
-(7, 'dfds', 'cxzff', 'fdsfd', 'laki-laki', '30', 'fdsfdsf', '085741236985'),
-(8, 'fdsfds', 'fdfs', 'fdsfad', 'perempuan', '34', 'fcdsfdsc', '1242121431241');
+INSERT INTO `warga` (`id_warga`, `nama_lengkap`, `username`, `password`, `jenis_kel`, `usia`, `alamat`, `no_tlpn`, `tgl_daftar`) VALUES
+(1, 'diana safitri', 'diana', '12345', 'perempuan', '25', 'kuningan', '085741321452', '2022-06-08'),
+(2, 'intan sari', 'intan', '12345', 'perempuan', '20', 'sindang barang', '085156727368', '2022-06-06'),
+(3, 'riki afrizon', 'admin', '12345', 'laki-laki', '23', 'jalaksana', '085745698745', '2022-06-05'),
+(4, 'adi', 'adi', 'adi', 'laki-laki', '21', 'ciawilor', '085745698745', '2022-06-02'),
+(5, 'sasa', 'sasa', 'sasa', 'laki-laki', '15', 'sasa', '085741236985', '2022-06-04'),
+(6, 'sasaxa', 'adsqw', 'dadsadsaa', 'perempuan', '13', 'kuningan', '212143124132', '2022-06-08'),
+(7, 'dfds', 'cxzff', 'fdsfd', 'laki-laki', '30', 'bandung', '085741236985', '2022-06-08'),
+(8, 'fdsfds', 'fdfs', 'fdsfad', 'perempuan', '34', 'bandung', '1242121431241', '2022-06-07');
 
 --
 -- Indexes for dumped tables
