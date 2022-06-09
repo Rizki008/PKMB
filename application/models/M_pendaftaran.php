@@ -133,10 +133,6 @@ GROUP BY tempat_lahir;")->result();
 	}
 	public function grafik_usia()
 	{
-		// $this->db->select('*');
-		// $this->db->from('warga');
-		// $this->db->order_by('usia', 'desc');
-		// return $this->db->get()->result();
 		return $this->db->query("SELECT
 		CASE
 			WHEN usia < 20 THEN '... - 20'
@@ -189,10 +185,26 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->order_by('tgl_lulus', 'desc');
 		return $this->db->get()->result();
 	}
-	public function paket()
+	public function paket_genap($tahun)
 	{
-		$this->db->select('COUNT(paket)AS total_paket, siswa.paket');
+		$this->db->select('COUNT(paket)AS total_paket_genap, siswa.paket');
 		$this->db->from('siswa');
+		$this->db->where("semester='genap'");
+		$this->db->where('YEAR(tgl_lulus)', $tahun);
+		$this->db->group_by('paket');
+		return $this->db->get()->result();
+
+		// return $this->db->query("SELECT COUNT(paket)AS total_paket_genap, siswa.paket FROM `siswa` WHERE YEAR(tgl_lulus)=$tahun OR semester='genap' GROUP BY paket;")->result();
+	}
+	public function paket_ganjil($tahun)
+	{
+		// SELECT COUNT(paket)AS total_paket, siswa.paket FROM `siswa` WHERE semester_genap='genap' GROUP BY paket;
+		// $where = "semester='ganjil' OR YEAR(tgl_lulus)=$tahun";
+		// $this->db->where($where);
+		$this->db->select('COUNT(paket)AS total_paket_ganjil, siswa.paket');
+		$this->db->from('siswa');
+		$this->db->where("semester='ganjil'");
+		$this->db->where('YEAR(tgl_lulus)', $tahun);
 		$this->db->group_by('paket');
 		return $this->db->get()->result();
 	}
