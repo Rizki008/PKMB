@@ -160,6 +160,42 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->order_by('tgl_lulus', 'desc');
 		return $this->db->get()->result();
 	}
+	public function alamat($tahun)
+	{
+		$this->db->select('COUNT(alamat)AS total_alamat, warga.alamat');
+		$this->db->from('warga');
+		$this->db->where('YEAR(tgl_daftar)', $tahun);
+		$this->db->group_by('alamat');
+		$this->db->order_by('tgl_daftar', 'desc');
+		return $this->db->get()->result();
+	}
+	public function genap($tahun)
+	{
+		$this->db->select('COUNT(semester_genap)AS total_semester_genap, siswa.semester_genap');
+		$this->db->from('siswa');
+		$this->db->where("semester_genap='genap'");
+		$this->db->where('YEAR(tgl_lulus)', $tahun);
+		$this->db->group_by('semester_genap');
+		$this->db->order_by('tgl_lulus', 'desc');
+		return $this->db->get()->result();
+	}
+	public function ganjil($tahun)
+	{
+		$this->db->select('COUNT(semester_ganjil)AS total_semester_ganjil, siswa.semester_ganjil');
+		$this->db->from('siswa');
+		$this->db->where("semester_ganjil='ganjil'");
+		$this->db->where('YEAR(tgl_lulus)', $tahun);
+		$this->db->group_by('semester_ganjil');
+		$this->db->order_by('tgl_lulus', 'desc');
+		return $this->db->get()->result();
+	}
+	public function paket()
+	{
+		$this->db->select('COUNT(paket)AS total_paket, siswa.paket');
+		$this->db->from('siswa');
+		$this->db->group_by('paket');
+		return $this->db->get()->result();
+	}
 
 	public function notif()
 	{
