@@ -37,4 +37,9 @@ class M_program extends CI_Model
 		$this->db->where('id_program', $data['id_program']);
 		$this->db->delete('pro_pkmb', $data);
 	}
+
+	public function kelas()
+	{
+		return $this->db->query('SELECT COUNT(nama) AS total, siswa.kelas FROM `siswa` GROUP BY kelas;')->result();
+	}
 }

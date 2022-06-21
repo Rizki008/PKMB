@@ -126,15 +126,30 @@ class Analisis extends CI_Controller
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
     }
 
-    public function analisis_paket()
+    public function analisis_paket_genap()
     {
         $tahun = $this->input->post('tahun');
 
         $data = array(
-            'title' => 'Data Kejar Paket Pertahun',
+            'title' => 'Data Kejar Paket Semster Genap',
             'tahun' => $tahun,
-            'analisis_paket' => $this->m_pendaftaran->paket($tahun),
-            'isi' => 'layout/yayasan/analisis_paket/v_paket'
+            'analisis_paket' => $this->m_pendaftaran->paket_genap($tahun),
+            'isi' => 'layout/yayasan/analisis_paket/v_paket_genap'
+        );
+        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    }
+    public function analisis_paket_ganjil()
+    {
+        $tahun = $this->input->post('tahun');
+        // $semester = $this->input->post('semester');
+
+        $data = array(
+            'title' => 'Data Kejar Paket Semester Ganjil',
+            'tahun' => $tahun,
+            // 'semester' => $semester,
+            'analisis_paket' => $this->m_pendaftaran->paket_ganjil($tahun),
+            // 'analisis_paket' => $this->m_pendaftaran->paket_ganjil($semester),
+            'isi' => 'layout/yayasan/analisis_paket/v_paket_ganjil'
         );
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
     }
