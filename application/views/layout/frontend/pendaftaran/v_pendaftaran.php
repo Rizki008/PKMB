@@ -119,6 +119,27 @@
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Upload Ijazah</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<input type="file" name="ijazah" id="preview_gambar">
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Upload Akte</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<input type="file" name="akteu" id="preview_gambar">
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Upload KK (Kartu Keluarga)</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<input type="file" name="nilai_raport" id="preview_gambar">
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12">
 								<label for="">Kejar Paket</label>
 								<div class="form-group">
 									<!-- <i class="fa fa-user"></i> -->
@@ -162,27 +183,6 @@
 								<div class="form-group">
 									<i class="fa fa-envelope"></i>
 									<input name="pindahan" type="text" placeholder="Asal Sekolah" value="<?= set_value('pindahan') ?>">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Upload Syarat Ijazah</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input type="file" name="ijazah" id="preview_gambar">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Upload Syarat Akteu</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input type="file" name="akteu" id="preview_gambar">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12">
-								<label for="">Upload Syarat Nilai Raport</label>
-								<div class="form-group">
-									<i class="fa fa-envelope"></i>
-									<input type="file" name="nilai_raport" id="preview_gambar">
 								</div>
 							</div>
 						</div>

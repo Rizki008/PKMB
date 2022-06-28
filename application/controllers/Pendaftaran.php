@@ -60,7 +60,7 @@ class Pendaftaran extends CI_Controller
 			$field_name = "ijazah";
 			if (!$this->upload->do_upload($field_name)) {
 				$data = array(
-					'title' => 'Pendaftaran Peserta PKMB',
+					'title' => 'Pendaftaran Peserta PKBM',
 					'isi' => 'layout/frontend/pendaftaran/v_pendaftaran'
 				);
 				$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
@@ -100,7 +100,7 @@ class Pendaftaran extends CI_Controller
 			}
 		}
 		$data = array(
-			'title' => 'Pendaftaran Peserta PKMB',
+			'title' => 'Pendaftaran Peserta PKBM',
 			'isi' => 'layout/frontend/pendaftaran/v_pendaftaran'
 		);
 		$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
