@@ -46,6 +46,6 @@
 	<!-- Eduland Colors -->
 	<link rel="stylesheet" href="<?= base_url() ?>frontend/css/colors/color1.css">
 	<!-- SweetAlert2 -->
-	<link rel="stylesheet" href="frontend/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>frontend/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
 </head>
