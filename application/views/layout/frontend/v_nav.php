@@ -21,7 +21,7 @@ $notif = $this->m_pendaftaran->notif();
 							<div class="navbar-collapse">
 								<!-- Main Menu -->
 								<ul id="nav" class="nav menu navbar-nav">
-									<li class="active"><a href="<?= base_url() ?>"><i class="fa fa-home"></i>Home</a></li>
+									<li class="active"><a href="<?= base_url() ?>"><i class="fa fa-home"></i>Beranda</a></li>
 									<li><?php
 
 										if ($this->session->userdata('username') == "") { ?>
