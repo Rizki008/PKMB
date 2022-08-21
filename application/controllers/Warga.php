@@ -37,6 +37,7 @@ class Warga extends CI_Controller
 				'usia' => $this->input->post('usia'),
 				'no_tlpn' => $this->input->post('no_tlpn'),
 				'alamat' => $this->input->post('alamat'),
+				'tgl_daftar' => date('Y-m-d'),
 			);
 			$this->m_warga->register($data);
 			$this->session->set_flashdata('pesan', 'Registrasi berhasil silahkan untuk login');

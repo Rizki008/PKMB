@@ -193,7 +193,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<div class="button">
-									<button type="submit" class="btn primary">Daftar PKBM</button>
+									<button type="submit" class="btn btn-success swalDefaultSuccess">Daftar PKBM</button>
 								</div>
 							</div>
 						</div>
@@ -243,3 +243,23 @@
 	</div>
 </div>
 <!--/ End Clients CSS -->
+
+<script src="<?= base_url() ?>frontend/sweetalert2/sweetalert2.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'top-end',
+			showConfirmButton: false,
+			timer: 3000
+		});
+
+		$('.swalDefaultSuccess').click(function() {
+			Toast.fire({
+				icon: 'success',
+				title: 'Pendaftaran Berhasil.'
+			})
+		});
+	});
+</script>
