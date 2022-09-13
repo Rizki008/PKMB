@@ -63,11 +63,24 @@ class Analisis extends CI_Controller
     {
         $data = array(
             'title' => 'Analisis Data Semester genap dan ganjil',
+            // 'genap' => $this->m_pendaftaran->genap_coy(),
             'isi' => 'layout/yayasan/analisis/v_semester'
         );
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
     }
 
+    public function semester_coy()
+    {
+        $tahun = $this->input->post('tahun');
+
+        $data = array(
+            'title' => 'Data Semester',
+            'tahun' => $tahun,
+            'genap' => $this->m_pendaftaran->semester_coy($tahun),
+            'isi' => 'layout/yayasan/analisis/v_analisis'
+        );
+        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    }
     public function genap()
     {
         $tahun = $this->input->post('tahun');
@@ -121,11 +134,24 @@ class Analisis extends CI_Controller
     {
         $data = array(
             'title' => 'Analisis Data Kejar Paket',
+            // 'analisis_paket' => $this->m_pendaftaran->paket_genap_coy(),
             'isi' => 'layout/yayasan/analisis_paket/v_analisis'
         );
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
     }
 
+    public function analisis_paket_coy()
+    {
+        $tahun = $this->input->post('tahun');
+
+        $data = array(
+            'title' => 'Data Kejar Paket Semster',
+            'tahun' => $tahun,
+            'analisis_paket' => $this->m_pendaftaran->paket_coy($tahun),
+            'isi' => 'layout/yayasan/analisis_paket/v_paket'
+        );
+        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    }
     public function analisis_paket_genap()
     {
         $tahun = $this->input->post('tahun');
