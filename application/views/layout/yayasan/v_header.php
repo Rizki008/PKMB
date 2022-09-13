@@ -41,7 +41,7 @@
 							<a href="<?= base_url('analisis/alamat') ?>"><i class="fa fa-home blue2_color"></i> <span>Analisis Alamat</span></a>
 						</li>
 						<li class="active">
-							<a href="<?= base_url('analisis/lulusan') ?>"><i class="fa fa-graduation-cap green_color"></i> <span>Analisis Kelulusan</span></a>
+							<a href="<?= base_url('analisis/lulusan') ?>"><i class="fa fa-graduation-cap green_color"></i> <span>Analisis Peminatan</span></a>
 						</li>
 						<li class="active">
 							<a href="<?= base_url('analisis/usia') ?>"><i class="fa fa-bar-chart purple_color2"></i> <span>Analisis Usia</span></a>
