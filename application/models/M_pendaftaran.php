@@ -157,6 +157,16 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->order_by('tgl_lulus', 'desc');
 		return $this->db->get()->result();
 	}
+	public function analisis_peminatan($tahun)
+	{
+		$this->db->select('COUNT(nama_peminatan) AS total_peminatan, peminatan.nama_peminatan');
+		$this->db->from('pendaftaran');
+		$this->db->join('peminatan', 'pendaftaran.id_peminatan = peminatan.id_peminatan', 'left');
+		$this->db->where('YEAR(tgl_terima)', $tahun);
+		$this->db->group_by('pendaftaran.id_peminatan');
+		$this->db->order_by('tgl_terima', 'desc');
+		return $this->db->get()->result();
+	}
 	public function alamat($tahun)
 	{
 		$this->db->select('COUNT(alamat)AS total_alamat, warga.alamat');

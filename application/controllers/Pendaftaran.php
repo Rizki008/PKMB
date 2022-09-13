@@ -9,6 +9,7 @@ class Pendaftaran extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_pendaftaran');
+		$this->load->model('m_peminatan');
 	}
 
 	public function index()
@@ -61,6 +62,7 @@ class Pendaftaran extends CI_Controller
 			if (!$this->upload->do_upload($field_name)) {
 				$data = array(
 					'title' => 'Pendaftaran Peserta PKBM',
+					'peminatan' => $this->m_peminatan->peminatan_pkmb(),
 					'isi' => 'layout/frontend/pendaftaran/v_pendaftaran'
 				);
 				$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
@@ -71,6 +73,7 @@ class Pendaftaran extends CI_Controller
 				$this->load->library('image_lib', $config);
 				$data = array(
 					'id_warga' => $this->session->userdata('id_warga'),
+					'id_peminatan' => $this->input->post('id_peminatan'),
 					'tempat_lahir' => $this->input->post('tempat_lahir'),
 					'tgl_lahir' => $this->input->post('tgl_lahir'),
 					'agama' => $this->input->post('agama'),
@@ -101,6 +104,7 @@ class Pendaftaran extends CI_Controller
 		}
 		$data = array(
 			'title' => 'Pendaftaran Peserta PKBM',
+			'peminatan' => $this->m_peminatan->peminatan_pkmb(),
 			'isi' => 'layout/frontend/pendaftaran/v_pendaftaran'
 		);
 		$this->load->view('layout/frontend/v_wrapper', $data, FALSE);

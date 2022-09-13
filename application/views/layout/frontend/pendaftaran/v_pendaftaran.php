@@ -188,7 +188,25 @@
 						</div>
 						<br>
 						<br>
+						<h4>-PEMINATAN SISWA</h4>
+						<br>
+						<div class="row">
 
+							<div class="col-lg-6 col-md-6 col-12">
+								<label for="">Peminatan Siswa</label>
+								<div class="form-group">
+									<i class="fa fa-envelope"></i>
+									<select name="id_peminatan" id="pendidikan">
+										<option>---Pilih Peminatan Siswa---</option>
+										<?php foreach ($peminatan as $key => $value) { ?>
+											<option value="<?= $value->id_peminatan ?>"><?= $value->nama_peminatan ?></option>
+										<?php } ?>
+									</select>
+								</div>
+							</div>
+						</div>
+						<br>
+						<br>
 						<input type="text" value="<?= $this->session->userdata('id_warga') ?>" hidden>
 						<div class="col-12">
 							<div class="form-group">

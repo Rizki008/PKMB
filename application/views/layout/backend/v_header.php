@@ -43,6 +43,7 @@
 							</ul>
 						</li>
 						<li><a href="<?= base_url('Program') ?>"><i class="fa fa-table purple_color2"></i> <span>Kegiatan PKBM</span></a></li>
+						<li><a href="<?= base_url('Peminatan') ?>"><i class="fa fa-users purple_color2"></i> <span>Peminatan PKBM</span></a></li>
 						<li><a href="<?= base_url('kelas') ?>"><i class="fa fa-table purple_color2"></i> <span>Data Kelas</span></a></li>
 					</ul>
 				</div>

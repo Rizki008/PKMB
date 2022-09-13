@@ -58,6 +58,29 @@ class Analisis extends CI_Controller
         );
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
     }
+
+    //peminatan
+    public function peminatan()
+    {
+        $data = array(
+            'title' => 'Analisis Data peminatan',
+            'isi' => 'layout/yayasan/analisis_peminatan/v_peminatan'
+        );
+        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    }
+
+    public function peminatan_tahun()
+    {
+        $tahun = $this->input->post('tahun');
+
+        $data = array(
+            'title' => 'Data peminatan Pertahun',
+            'tahun' => $tahun,
+            'analisis_peminatan' => $this->m_pendaftaran->analisis_peminatan($tahun),
+            'isi' => 'layout/yayasan/analisis_peminatan/v_tahun'
+        );
+        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    }
     //Semester
     public function semester()
     {
