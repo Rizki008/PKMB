@@ -17,20 +17,101 @@
                         </div>
                     </div>
                     <div class="map_section padding_infor_info">
-                        <canvas id="myChart1"></canvas>
+                        <canvas id="speedChart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php
-foreach ($analisis_alamat as $key => $value) {
-    $alamat[] = $value->alamat;
-    $total_alamat[] = $value->total_alamat;
-}
-?>
+
+<!-- <?php
+        // foreach ($analisis_alamat as $key => $value) {
+        //     $alamat[] = $value->alamat;
+        //     $total_alamat[] = $value->total_alamat;
+        // }
+        ?> -->
 <script>
+    var speedCanvas = document.getElementById("speedChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var dataFirst = {
+        label: "Kuningan",
+        data: [20, 15, 60, 60, 10],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'red',
+        backgroundColor: 'rgba(0, 99, 132, 0.6)',
+    };
+
+    var dataSecond = {
+        label: "Luragung",
+        data: [0, 59, 75, 20, 21],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'blue',
+        backgroundColor: 'rgba(0, 255, 0, 0.3)',
+    };
+    var dataTime = {
+        label: "Bandorasa",
+        data: [40, 59, 10, 20, 30],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'green',
+        backgroundColor: 'rgba(99, 132, 0, 0.6)'
+    };
+    var dataDate = {
+        label: "Cilimus",
+        data: [10, 30, 80, 20, 10],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'yellow',
+        backgroundColor: 'rgba(255,0,0,0.3)'
+    };
+    var dataRInc = {
+        label: "Ciawigebang",
+        data: [19, 70, 40, 50, 19],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'jingga',
+        backgroundColor: 'rgba(255,0,255,0.3)'
+    };
+
+    var speedData = {
+        labels: [2018, 2019, 2020, 2021, 2022],
+        datasets: [dataFirst, dataSecond, dataTime, dataDate, dataRInc]
+    };
+
+    var chartOptions = {
+        legend: {
+            display: true,
+            position: 'top',
+            labels: {
+                boxWidth: 80,
+                fontColor: 'black'
+            }
+        }
+    };
+
+    var lineChart = new Chart(speedCanvas, {
+        type: 'bar',
+        data: speedData,
+        options: chartOptions
+    });
+</script>
+
+<script>
+
+</script>
+<!-- <?php
+        // foreach ($analisis_alamat as $key => $value) {
+        //     $alamat[] = $value->alamat;
+        //     $total_alamat[] = $value->total_alamat;
+        // }
+        ?> -->
+<!-- <script>
     var ctx = document.getElementById('myChart1');
     var myChart1 = new Chart(ctx, {
         type: 'bar',
@@ -129,4 +210,4 @@ foreach ($analisis_alamat as $key => $value) {
             }
         }
     });
-</script>
+</script> -->

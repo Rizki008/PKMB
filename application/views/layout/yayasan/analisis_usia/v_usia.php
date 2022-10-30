@@ -18,19 +18,80 @@
                     </div>
                     <div class="map_section padding_infor_info">
                         <canvas id="usia"></canvas>
+                        <!-- <canvas id="densityChart"></canvas> -->
+                        <!-- <div id="graph"></div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <?php
 foreach ($analisis_usia as $key => $value) {
     $range_umur[] = $value->range_umur;
     $jumlah[] = $value->jumlah;
 }
 ?>
+<!-- <script>
+    var densityCanvas = document.getElementById("densityChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var densityData = {
+        label: "Usia",
+        data: <?= json_encode($jumlah) ?>,
+        backgroundColor: 'rgba(0, 99, 132, 0.6)',
+        borderColor: 'rgba(0, 99, 132, 1)',
+        // yAxisID: "y-axis-density"
+    };
+
+    var gravityData = {
+        label: "usia",
+        data: <?= json_encode($jumlah) ?>,
+        backgroundColor: 'rgba(99, 132, 0, 0.6)',
+        borderColor: 'rgba(99, 132, 0, 1)',
+        // yAxisID: "y-axis-gravity"
+    };
+
+    var planetData = {
+        labels: <?= json_encode($range_umur) ?>,
+        datasets: [densityData, gravityData]
+    };
+
+    var chartOptions = {
+        legend: {
+            display: true,
+            position: 'top',
+            labels: {
+                boxWidth: 80,
+                fontColor: 'black'
+            }
+        }
+    };
+
+    var barChart = new Chart(densityCanvas, {
+        type: 'bar',
+        data: planetData,
+        options: chartOptions
+    });
+</script> -->
+
+<!-- <script>
+    Morris.Line({
+        element: 'graph',
+        data: <?php echo $data; ?>,
+        xkey: 'tgl_lulus',
+        ykeys: ['semester_ganjil', 'semester_genap', 'semester'],
+        labels: ['semester_ganjil', 'semester_genap', 'semester']
+    });
+</script> -->
+<!-- <?php
+        // foreach ($analisis_usia as $key => $value) {
+        //     $range_umur[] = $value->range_umur;
+        //     $jumlah[] = $value->jumlah;
+        // }
+        ?> -->
 <script>
     var ctx = document.getElementById('usia');
     var usia = new Chart(ctx, {

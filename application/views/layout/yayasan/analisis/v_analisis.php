@@ -3,7 +3,7 @@
         <div class="row column_title">
             <div class="col-md-12">
                 <div class="page_title">
-                    <h2><?= $title ?></h2>
+                    <h2>Analisis Data Semester genap dan ganjil</h2>
                 </div>
             </div>
         </div>
@@ -13,11 +13,13 @@
                 <div class="white_shd full margin_bottom_30">
                     <div class="full graph_head">
                         <div class="heading1 margin_0">
-                            <h2><?= $title ?></h2>
+                            <h2>Analisis Data Semester genap dan ganjil</h2>
                         </div>
                     </div>
                     <div class="map_section padding_infor_info">
-                        <canvas id="myChart1"></canvas>
+                        <!-- <canvas id="myChart1"></canvas> -->
+                        <div id="graph"></div>
+                        <canvas id="speedChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -25,15 +27,85 @@
     </div>
 </div>
 
-<?php
-foreach ($genap as $key => $value) {
-    $semester[] = $value->semester;
-    $total_semester_genap[] = $value->total_semester_genap;
-}
-?>
 <script>
-    var ctx = document.getElementById('myChart1');
-    var myChart1 = new Chart(ctx, {
+    var speedCanvas = document.getElementById("speedChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var dataFirst = {
+        label: "Ganjil",
+        data: [20, 15, 60, 60],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'red'
+    };
+
+    var dataSecond = {
+        label: "Genap",
+        data: [0, 59, 75, 20],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'blue'
+    };
+
+    var speedData = {
+        labels: [2018, 2019, 2020, 2022],
+        datasets: [dataFirst, dataSecond]
+    };
+
+    var chartOptions = {
+        legend: {
+            display: true,
+            position: 'top',
+            labels: {
+                boxWidth: 80,
+                fontColor: 'black'
+            }
+        }
+    };
+
+    var lineChart = new Chart(speedCanvas, {
+        type: 'line',
+        data: speedData,
+        options: chartOptions
+    });
+</script>
+
+
+<!-- <script>
+    Morris.Line({
+        element: 'graph',
+        data: <?php echo $data; ?>,
+        xkey: 'tgl_lulus',
+        ykeys: ['semester_ganjil', 'semester_genap', 'semester'],
+        labels: ['semester_ganjil', 'semester_genap', 'semester']
+    });
+</script> -->
+
+<!-- <script>
+    Morris.Bar({
+        element: 'graph',
+        barGap: 4,
+        barSizeRatio: 0.30,
+        preUnits: "%",
+        data: <?php echo $data; ?>,
+        xkey: 'year',
+        ykeys: ['total_paket_ganjil', 'total_paket_genap', 'semester'],
+        labels: ['total_paket_ganjil', 'total_paket_genap', 'semester'],
+        barColors: ['#f00', '#efff00', '#009aff'],
+        stacked: true
+    });
+</script> -->
+<!-- <?php
+        // foreach ($genap as $key => $value) {
+        // $semester[] = $value->semester;
+        // $total_semester_genap[] = $value->total_semester_genap;
+        // }
+        ?> -->
+<!-- <script>
+    const ctx = document.getElementById('myChart1').getContext('2d');
+    const myChart1 = new Chart(ctx, {
         type: 'line',
         data: {
             labels: <?= json_encode($semester) ?>,
@@ -130,4 +202,4 @@ foreach ($genap as $key => $value) {
             }
         }
     });
-</script>
+</script> -->

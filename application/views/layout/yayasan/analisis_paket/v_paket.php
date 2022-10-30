@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="map_section padding_infor_info">
-                        <canvas id="pie_char"></canvas>
+                        <canvas id="densityChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -31,6 +31,26 @@ foreach ($analisis_paket as $key => $value) {
 }
 ?>
 <script>
+    var densityCanvas = document.getElementById("densityChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var densityData = {
+        label: 'Kejar Paket',
+        data: <?= json_encode($total_paket) ?>,
+        backgroundColor: 'rgba(99, 132, 0, 0.6)'
+    };
+
+    var barChart = new Chart(densityCanvas, {
+        type: 'bar',
+        data: {
+            labels: <?= json_encode($paket) ?>,
+            datasets: [densityData]
+        }
+    });
+</script>
+<!-- <script>
     var ctx = document.getElementById('pie_char');
     var pie_char = new Chart(ctx, {
         type: 'bar',
@@ -129,4 +149,4 @@ foreach ($analisis_paket as $key => $value) {
             }
         }
     });
-</script>
+</script> -->

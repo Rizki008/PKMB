@@ -186,11 +186,11 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->order_by('tgl_lulus', 'desc');
 		return $this->db->get()->result();
 	}
-	public function semester_coy($tahun)
+	public function semester_coy()
 	{
-		$this->db->select('COUNT(semester_genap)AS total_semester_genap, siswa.semester');
+		$this->db->select('SUM(semester_genap) AS total_semester_genap, siswa.semester');
 		$this->db->from('siswa');
-		$this->db->where('YEAR(tgl_lulus)', $tahun);
+		// $this->db->where('YEAR(tgl_lulus)', $tahun);
 		$this->db->group_by('semester');
 		$this->db->order_by('tgl_lulus', 'desc');
 		return $this->db->get()->result();
@@ -276,5 +276,15 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->where('status=2');
 		$this->db->group_by('id_pendaftaran', 'desc');
 		return $this->db->get()->result();
+	}
+
+	function get_data()
+	{
+		$this->db->select('tgl_lulus,semester_ganjil,semester_genap,semester');
+		$this->db->group_by('semester_ganjil');
+		$this->db->group_by('semester_genap');
+
+		$result = $this->db->get('siswa');
+		return $result;
 	}
 }

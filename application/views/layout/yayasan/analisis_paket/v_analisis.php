@@ -27,7 +27,7 @@
                                     <!-- /.card-header -->
                                     <div class="card-body">
                                         <?php
-                                        echo form_open('analisis/analisis_paket_coy') ?>
+                                        echo form_open('analisis/analisis_paket') ?>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
