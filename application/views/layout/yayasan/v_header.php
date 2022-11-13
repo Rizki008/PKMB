@@ -49,6 +49,9 @@
 						<li class="active">
 							<a href="<?= base_url('analisis/paket') ?>"><i class="fa fa-book yellow_color"></i> <span>Analisis Kejar Paket</span></a>
 						</li>
+						<li class="active">
+							<a href="<?= base_url('laporan') ?>"><i class="fa fa-book success_color"></i> <span>Laporan Analisis</span></a>
+						</li>
 					</ul>
 				</div>
 			</nav>
