@@ -76,6 +76,7 @@ class Pendaftaran extends CI_Controller
 					'id_peminatan' => $this->input->post('id_peminatan'),
 					'tempat_lahir' => $this->input->post('tempat_lahir'),
 					'tgl_lahir' => $this->input->post('tgl_lahir'),
+					'tgl_daftar' => date('Y-m-d'),
 					'agama' => $this->input->post('agama'),
 					'desa' => $this->input->post('desa'),
 					'kecamatan' => $this->input->post('kecamatan'),
