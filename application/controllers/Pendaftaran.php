@@ -55,7 +55,7 @@ class Pendaftaran extends CI_Controller
 		$this->form_validation->set_rules('pendidikan', 'Pendidikan Sebelumnya', 'required', array('required' => '%s Mohon Untuk Diisi!!'));
 		if ($this->form_validation->run() == TRUE) {
 			$config['upload_path'] = './assets/syarat';
-			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['allowed_types'] = 'pdf';
 			$config['max_size']  = '5000';
 			$this->upload->initialize($config);
 			$field_name = "ijazah";
