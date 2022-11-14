@@ -18,6 +18,7 @@
                     </div>
                     <div class="map_section padding_infor_info">
                         <canvas id="speedChart"></canvas>
+                        <!-- <canvas id="densityChart"></canvas> -->
                     </div>
                 </div>
             </div>
@@ -25,12 +26,20 @@
     </div>
 </div>
 
-<!-- <?php
-        // foreach ($analisis_alamat as $key => $value) {
-        //     $alamat[] = $value->alamat;
-        //     $total_alamat[] = $value->total_alamat;
-        // }
-        ?> -->
+<?php
+foreach ($analisis_alamat as $key => $value) {
+    // $alamat[] = $value->alamat;
+    $kuningan[] = $value->kuningan;
+    $ciawilor[] = $value->ciawilor;
+    $jalaksana[] = $value->jalaksana;
+    $sindang_barang[] = $value->sindang_barang;
+    $bandung[] = $value->bandung;
+    $majalengka[] = $value->majalengka;
+    $cicaheum[] = $value->cicaheum;
+    $subang[] = $value->subang;
+    $tgl_daftar[] = $value->tgl_daftar;
+}
+?>
 <script>
     var speedCanvas = document.getElementById("speedChart");
 
@@ -38,8 +47,8 @@
     Chart.defaults.global.defaultFontSize = 18;
 
     var dataFirst = {
-        label: "Kuningan",
-        data: [20, 15, 60, 60, 10],
+        label: 'Kuningan',
+        data: <?= json_encode($kuningan) ?>,
         lineTension: 0,
         fill: false,
         borderColor: 'red',
@@ -47,41 +56,66 @@
     };
 
     var dataSecond = {
-        label: "Luragung",
-        data: [0, 59, 75, 20, 21],
+        label: 'Ciawilor',
+        data: <?= json_encode($ciawilor) ?>,
         lineTension: 0,
         fill: false,
         borderColor: 'blue',
         backgroundColor: 'rgba(0, 255, 0, 0.3)',
     };
     var dataTime = {
-        label: "Bandorasa",
-        data: [40, 59, 10, 20, 30],
+        label: 'Jalaksana',
+        data: <?= json_encode($jalaksana) ?>,
         lineTension: 0,
         fill: false,
         borderColor: 'green',
         backgroundColor: 'rgba(99, 132, 0, 0.6)'
     };
     var dataDate = {
-        label: "Cilimus",
-        data: [10, 30, 80, 20, 10],
+        label: 'Sindang Barang',
+        data: <?= json_encode($sindang_barang) ?>,
         lineTension: 0,
         fill: false,
         borderColor: 'yellow',
         backgroundColor: 'rgba(255,0,0,0.3)'
     };
     var dataRInc = {
-        label: "Ciawigebang",
-        data: [19, 70, 40, 50, 19],
+        label: 'Bandung',
+        data: <?= json_encode($bandung) ?>,
         lineTension: 0,
         fill: false,
         borderColor: 'jingga',
         backgroundColor: 'rgba(255,0,255,0.3)'
     };
+    var dataRInca = {
+        label: 'Cicaheum',
+        data: <?= json_encode($cicaheum) ?>,
+        lineTension: 0,
+        fill: false,
+        borderColor: 'Crimson',
+        backgroundColor: 'rgba(220,20,60)'
+    };
+    var dataRIncu = {
+        label: 'Majalengka',
+        data: <?= json_encode($majalengka) ?>,
+        lineTension: 0,
+        fill: false,
+        borderColor: 'Dark Blue',
+        backgroundColor: 'rgba(0,0,139)'
+    };
+    var dataRInci = {
+        label: 'Subang',
+        data: <?= json_encode($subang) ?>,
+        lineTension: 0,
+        fill: false,
+        borderColor: 'Chartreuse',
+        backgroundColor: 'rgba(127,255,1)'
+    };
+
 
     var speedData = {
-        labels: [2018, 2019, 2020, 2021, 2022],
-        datasets: [dataFirst, dataSecond, dataTime, dataDate, dataRInc]
+        labels: <?= json_encode($tgl_daftar) ?>,
+        datasets: [dataFirst, dataSecond, dataTime, dataDate, dataRInc, dataRInca, dataRIncu, dataRInci]
     };
 
     var chartOptions = {
@@ -102,112 +136,57 @@
     });
 </script>
 
-<script>
-
-</script>
 <!-- <?php
         // foreach ($analisis_alamat as $key => $value) {
         //     $alamat[] = $value->alamat;
         //     $total_alamat[] = $value->total_alamat;
+        //     $tgl_daftar[] = $value->tgl_daftar;
         // }
         ?> -->
 <!-- <script>
-    var ctx = document.getElementById('myChart1');
-    var myChart1 = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: <?= json_encode($alamat) ?>,
-            datasets: [{
-                label: 'Grafik Analisis Sesuai Alamat',
-                data: <?= json_encode($total_alamat) ?>,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.80)',
-                    'rgba(54, 162, 235, 0.80)',
-                    'rgba(255, 206, 86, 0.80)',
-                    'rgba(75, 192, 192, 0.80)',
-                    'rgba(153, 102, 255, 0.80)',
-                    'rgba(255, 159, 64, 0.80)',
-                    'rgba(201, 76, 76, 0.3)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(0, 140, 162, 1)',
-                    'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)',
-                    'rgba(255, 99, 132, 0.80)',
-                    'rgba(54, 162, 235, 0.80)',
-                    'rgba(255, 206, 86, 0.80)',
-                    'rgba(75, 192, 192, 0.80)',
-                    'rgba(153, 102, 255, 0.80)',
-                    'rgba(255, 159, 64, 0.80)',
-                    'rgba(201, 76, 76, 0.3)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(0, 140, 162, 1)',
-                    'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(201, 76, 76, 0.3)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(0, 140, 162, 1)',
-                    'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(201, 76, 76, 0.3)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(0, 140, 162, 1)',
-                    'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)'
-                ],
-                fill: false,
-                borderWidth: 1
+    var densityCanvas = document.getElementById("densityChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var densityData = {
+        label: <?= json_encode($alamat) ?>,
+        data: <?= json_encode($total_alamat) ?>,
+        backgroundColor: 'rgba(0, 99, 132, 0.6)',
+        borderColor: 'rgba(0, 99, 132, 1)',
+        yAxisID: "y-axis-density"
+    };
+
+    var gravityData = {
+        label: <?= json_encode($alamat) ?>,
+        data: <?= json_encode($total_alamat) ?>,
+        backgroundColor: 'rgba(99, 132, 0, 0.6)',
+        borderColor: 'rgba(99, 132, 0, 1)',
+        yAxisID: "y-axis-gravity"
+    };
+
+    var planetData = {
+        labels: <?= json_encode($tgl_daftar) ?>,
+        datasets: [densityData, gravityData]
+    };
+
+    var chartOptions = {
+        scales: {
+            xAxes: [{
+                barPercentage: 1,
+                categoryPercentage: 0.6
+            }],
+            yAxes: [{
+                id: "y-axis-density"
+            }, {
+                id: "y-axis-gravity"
             }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
         }
+    };
+
+    var barChart = new Chart(densityCanvas, {
+        type: 'bar',
+        data: planetData,
+        options: chartOptions
     });
 </script> -->
