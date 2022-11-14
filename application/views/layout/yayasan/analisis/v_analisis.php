@@ -27,6 +27,13 @@
     </div>
 </div>
 
+<?php
+foreach ($analisis_semester as $key => $value) {
+    $ganjil[] = $value->ganjil;
+    $genap[] = $value->genap;
+    $tgl_lulus[] = $value->tgl_lulus;
+}
+?>
 <script>
     var speedCanvas = document.getElementById("speedChart");
 
@@ -35,7 +42,7 @@
 
     var dataFirst = {
         label: "Ganjil",
-        data: [20, 15, 60, 60],
+        data: <?= json_encode($ganjil) ?>,
         lineTension: 0,
         fill: false,
         borderColor: 'red'
@@ -43,14 +50,14 @@
 
     var dataSecond = {
         label: "Genap",
-        data: [0, 59, 75, 20],
+        data: <?= json_encode($genap) ?>,
         lineTension: 0,
         fill: false,
         borderColor: 'blue'
     };
 
     var speedData = {
-        labels: [2018, 2019, 2020, 2022],
+        labels: <?= json_encode($tgl_lulus) ?>,
         datasets: [dataFirst, dataSecond]
     };
 
