@@ -6,6 +6,7 @@ class M_pendaftaran extends CI_Model
 {
 	public function total_pendaftar()
 	{
+		$this->db->where('pendaftaran.status=0');
 		return $this->db->get('pendaftaran')->num_rows();
 	}
 	public function total_warga()
@@ -167,15 +168,7 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->order_by('tgl_terima', 'desc');
 		return $this->db->get()->result();
 	}
-	public function alamat($tahun)
-	{
-		$this->db->select('COUNT(alamat)AS total_alamat, warga.alamat');
-		$this->db->from('warga');
-		$this->db->where('YEAR(tgl_daftar)', $tahun);
-		$this->db->group_by('alamat');
-		$this->db->order_by('tgl_daftar', 'desc');
-		return $this->db->get()->result();
-	}
+
 	public function genap($tahun)
 	{
 		$this->db->select('COUNT(semester_genap)AS total_semester_genap, siswa.semester_genap');
@@ -186,15 +179,7 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->order_by('tgl_lulus', 'desc');
 		return $this->db->get()->result();
 	}
-	public function semester_coy()
-	{
-		$this->db->select('SUM(semester_genap) AS total_semester_genap, siswa.semester');
-		$this->db->from('siswa');
-		// $this->db->where('YEAR(tgl_lulus)', $tahun);
-		$this->db->group_by('semester');
-		$this->db->order_by('tgl_lulus', 'desc');
-		return $this->db->get()->result();
-	}
+
 	public function ganjil($tahun)
 	{
 		$this->db->select('COUNT(semester_ganjil)AS total_semester_ganjil, siswa.semester_ganjil');
@@ -254,6 +239,17 @@ GROUP BY tempat_lahir;")->result();
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
 		$this->db->where('pendaftaran.id_warga=', $id_warga);
+		$this->db->where('status=1');
+		$this->db->group_by('id_pendaftaran');
+		return $this->db->get()->num_rows();
+	}
+	public function notiftolaka()
+	{
+		$id_warga = $this->session->userdata('id_warga');
+		$this->db->select('*');
+		$this->db->from('pendaftaran');
+		$this->db->where('pendaftaran.id_warga=', $id_warga);
+		$this->db->where('status=2');
 		$this->db->group_by('id_pendaftaran');
 		return $this->db->get()->num_rows();
 	}
@@ -286,5 +282,28 @@ GROUP BY tempat_lahir;")->result();
 
 		$result = $this->db->get('siswa');
 		return $result;
+	}
+
+	//semester
+	public function analisis_semester()
+	{
+		return $this->db->query('SELECT
+		SUM(siswa.semester="ganjil") AS ganjil,
+		SUM(siswa.semester="genap") AS genap,
+		YEAR(tgl_lulus) as tgl_lulus FROM `siswa` GROUP BY YEAR(tgl_lulus);')->result();
+	}
+	//alamat
+	public function alamat()
+	{
+		return $this->db->query('SELECT
+		SUM(warga.alamat="kuningan") AS kuningan,
+		SUM(warga.alamat="ciawilor") AS ciawilor,
+		SUM(warga.alamat="jalaksana") AS jalaksana,
+		SUM(warga.alamat="sindang barang") AS sindang_barang,
+		SUM(warga.alamat="bandung") AS bandung,
+		SUM(warga.alamat="cicaheum") AS cicaheum,
+		SUM(warga.alamat="majalengka") AS majalengka,
+		SUM(warga.alamat="subang") AS subang,
+		YEAR(tgl_daftar) as tgl_daftar FROM `warga` GROUP BY YEAR(tgl_daftar);')->result();
 	}
 }

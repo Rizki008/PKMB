@@ -17,6 +17,7 @@ class Pendaftaran extends CI_Controller
 		$data = array(
 			'title' => 'Data Pendaftar Baru',
 			'pendaftaran' => $this->m_pendaftaran->pendaftaran(),
+			'total_pendaftar' => $this->m_pendaftaran->total_pendaftar(),
 			'isi' => 'layout/backend/pendaftaran/v_pendaftaran'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
