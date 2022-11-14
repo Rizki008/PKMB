@@ -18,28 +18,7 @@ class Analisis extends CI_Controller
     {
         $data = array(
             'title' => 'Analisis Data Alamat',
-            // 'analisis_alamat' => $this->m_pendaftaran->alamat(),
-            'isi' => 'layout/yayasan/analisis_alamat/v_tahun'
-        );
-        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
-
-        // $data = $this->m_pendaftaran->get_data()->result();
-        // $x['data'] = json_encode($data);
-        // $this->load->view('layout/yayasan/v_head');
-        // $this->load->view('layout/yayasan/v_header');
-        // $this->load->view('layout/yayasan/v_nav');
-        // $this->load->view('layout/yayasan/analisis_alamat/v_tahun', $x);
-        // $this->load->view('layout/yayasan/v_footer');
-    }
-
-    public function alamat_tahun()
-    {
-        $tahun = $this->input->post('tahun');
-
-        $data = array(
-            'title' => 'Data Alamat Pertahun',
-            'tahun' => $tahun,
-            'analisis_alamat' => $this->m_pendaftaran->alamat($tahun),
+            'analisis_alamat' => $this->m_pendaftaran->alamat(),
             'isi' => 'layout/yayasan/analisis_alamat/v_tahun'
         );
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
@@ -96,55 +75,48 @@ class Analisis extends CI_Controller
     {
         $data = array(
             'title' => 'Analisis Data Semester genap dan ganjil',
-            'genap' => $this->m_pendaftaran->semester_coy(),
-            'isi' => 'layout/yayasan/analisis/v_analisis'
-        );
-        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
-        // $data = $this->m_pendaftaran->get_data_alamat()->result();
-        // $x['data'] = json_encode($data);
-        // $this->load->view('layout/yayasan/v_head');
-        // $this->load->view('layout/yayasan/v_header');
-        // $this->load->view('layout/yayasan/v_nav');
-        // $this->load->view('layout/yayasan/analisis/v_analisis', $x);
-        // $this->load->view('layout/yayasan/v_footer');
-    }
-
-    public function semester_coy()
-    {
-        $tahun = $this->input->post('tahun');
-
-        $data = array(
-            'title' => 'Data Semester',
-            'tahun' => $tahun,
-            'genap' => $this->m_pendaftaran->semester_coy($tahun),
+            'analisis_semester' => $this->m_pendaftaran->analisis_semester(),
             'isi' => 'layout/yayasan/analisis/v_analisis'
         );
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
     }
-    public function genap()
-    {
-        $tahun = $this->input->post('tahun');
 
-        $data = array(
-            'title' => 'Data Semester Genap',
-            'tahun' => $tahun,
-            'genap' => $this->m_pendaftaran->genap($tahun),
-            'isi' => 'layout/yayasan/analisis/v_analisis_genap'
-        );
-        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
-    }
-    public function ganjil()
-    {
-        $tahun = $this->input->post('tahun');
+    // public function semester_coy()
+    // {
+    //     $tahun = $this->input->post('tahun');
 
-        $data = array(
-            'title' => 'Data Semester Ganjil',
-            'tahun' => $tahun,
-            'ganjil' => $this->m_pendaftaran->ganjil($tahun),
-            'isi' => 'layout/yayasan/analisis/v_analisis_ganjil'
-        );
-        $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
-    }
+    //     $data = array(
+    //         'title' => 'Data Semester',
+    //         'tahun' => $tahun,
+    //         'genap' => $this->m_pendaftaran->semester_coy($tahun),
+    //         'isi' => 'layout/yayasan/analisis/v_analisis'
+    //     );
+    //     $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    // }
+    // public function genap()
+    // {
+    //     $tahun = $this->input->post('tahun');
+
+    //     $data = array(
+    //         'title' => 'Data Semester Genap',
+    //         'tahun' => $tahun,
+    //         'genap' => $this->m_pendaftaran->genap($tahun),
+    //         'isi' => 'layout/yayasan/analisis/v_analisis_genap'
+    //     );
+    //     $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    // }
+    // public function ganjil()
+    // {
+    //     $tahun = $this->input->post('tahun');
+
+    //     $data = array(
+    //         'title' => 'Data Semester Ganjil',
+    //         'tahun' => $tahun,
+    //         'ganjil' => $this->m_pendaftaran->ganjil($tahun),
+    //         'isi' => 'layout/yayasan/analisis/v_analisis_ganjil'
+    //     );
+    //     $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
+    // }
 
     //usia
     public function usia()
