@@ -121,11 +121,24 @@ foreach ($analisis_peminatan as $key => $value) {
         },
         options: {
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Grafik Analisis Peminatan Siswa'
                     }
-                }]
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Grafik Analisis Peminatan Siswa'
+                    },
+                    min: 0,
+                    max: 20,
+                    ticks: {
+                        // forces step size to be 50 units
+                        stepSize: 1
+                    }
+                }
             }
         }
     });

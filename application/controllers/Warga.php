@@ -29,10 +29,13 @@ class Warga extends CI_Controller
 			);
 			$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
 		} else {
+			// $ket = implode(",", $this->input->post('ket'));
 			$data = array(
 				'nama_lengkap' => $this->input->post('nama_lengkap'),
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password'),
+				// 'jenis_kel' => $ket,
+				// 'checked' => TRUE,
 				'jenis_kel' => $this->input->post('jenis_kel'),
 				'usia' => $this->input->post('usia'),
 				'no_tlpn' => $this->input->post('no_tlpn'),

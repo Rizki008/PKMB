@@ -160,13 +160,18 @@ GROUP BY tempat_lahir;")->result();
 	}
 	public function analisis_peminatan($tahun)
 	{
-		$this->db->select('COUNT(nama_peminatan) AS total_peminatan, peminatan.nama_peminatan');
-		$this->db->from('pendaftaran');
-		$this->db->join('peminatan', 'pendaftaran.id_peminatan = peminatan.id_peminatan', 'left');
-		$this->db->where('YEAR(tgl_terima)', $tahun);
-		$this->db->group_by('pendaftaran.id_peminatan');
-		$this->db->order_by('tgl_terima', 'desc');
-		return $this->db->get()->result();
+		// $this->db->select('COUNT(nama_peminatan) AS total_peminatan, peminatan.nama_peminatan');
+		// $this->db->from('pendaftaran');
+		// $this->db->join('peminatan', 'pendaftaran.id_peminatan = peminatan.id_peminatan', 'left');
+		// $this->db->where('YEAR(tgl_terima)', $tahun);
+		// $this->db->group_by('pendaftaran.id_peminatan');
+		// $this->db->order_by('tgl_terima', 'desc');
+		return $this->db->query("SELECT COUNT(nama_peminatan) AS total_peminatan, `peminatan`.`nama_peminatan`
+		FROM `pendaftaran`
+		LEFT JOIN `peminatan` ON `pendaftaran`.`id_peminatan` = `peminatan`.`id_peminatan`
+		WHERE YEAR(tgl_terima) ='" . $tahun . "'
+		GROUP BY `pendaftaran`.`id_peminatan`
+		ORDER BY `tgl_terima` DESC;")->result();
 	}
 
 	public function genap($tahun)

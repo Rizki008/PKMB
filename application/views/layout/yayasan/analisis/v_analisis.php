@@ -17,9 +17,9 @@
                         </div>
                     </div>
                     <div class="map_section padding_infor_info">
-                        <!-- <canvas id="myChart1"></canvas> -->
-                        <div id="graph"></div>
-                        <canvas id="speedChart"></canvas>
+                        <canvas id="myChart1"></canvas>
+                        <!-- <div id="graph"></div> -->
+                        <!-- <canvas id="speedChart"></canvas> -->
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@ foreach ($analisis_semester as $key => $value) {
     $tgl_lulus[] = $value->tgl_lulus;
 }
 ?>
-<script>
+<!-- <script>
     var speedCanvas = document.getElementById("speedChart");
 
     Chart.defaults.global.defaultFontFamily = "Lato";
@@ -77,7 +77,7 @@ foreach ($analisis_semester as $key => $value) {
         data: speedData,
         options: chartOptions
     });
-</script>
+</script> -->
 
 
 <!-- <script>
@@ -110,15 +110,15 @@ foreach ($analisis_semester as $key => $value) {
         // $total_semester_genap[] = $value->total_semester_genap;
         // }
         ?> -->
-<!-- <script>
+<script>
     const ctx = document.getElementById('myChart1').getContext('2d');
     const myChart1 = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: <?= json_encode($semester) ?>,
+            labels: <?= json_encode($tgl_lulus) ?>,
             datasets: [{
-                label: 'Grafik Analisis semester',
-                data: <?= json_encode($total_semester_genap) ?>,
+                label: 'Grafik Analisis semester Genap',
+                data: <?= json_encode($genap) ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.80)',
                     'rgba(54, 162, 235, 0.80)',
@@ -130,32 +130,6 @@ foreach ($analisis_semester as $key => $value) {
                     'rgba(201, 77, 77, 1)',
                     'rgba(0, 140, 162, 1)',
                     'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)',
-                    'rgba(255, 99, 132, 0.80)',
-                    'rgba(54, 162, 235, 0.80)',
-                    'rgba(255, 206, 86, 0.80)',
-                    'rgba(75, 192, 192, 0.80)',
-                    'rgba(153, 102, 255, 0.80)',
-                    'rgba(255, 159, 64, 0.80)',
-                    'rgba(201, 76, 76, 0.3)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(0, 140, 162, 1)',
-                    'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -168,14 +142,25 @@ foreach ($analisis_semester as $key => $value) {
                     'rgba(201, 77, 77, 1)',
                     'rgba(0, 140, 162, 1)',
                     'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Grafik Analisis semester Ganjil',
+                data: <?= json_encode($ganjil) ?>,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.80)',
+                    'rgba(54, 162, 235, 0.80)',
+                    'rgba(255, 206, 86, 0.80)',
+                    'rgba(75, 192, 192, 0.80)',
+                    'rgba(153, 102, 255, 0.80)',
+                    'rgba(255, 159, 64, 0.80)',
+                    'rgba(201, 76, 76, 0.3)',
                     'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)',
+                    'rgba(0, 140, 162, 1)',
+                    'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
@@ -186,14 +171,6 @@ foreach ($analisis_semester as $key => $value) {
                     'rgba(201, 77, 77, 1)',
                     'rgba(0, 140, 162, 1)',
                     'rgba(158, 109, 8, 1)',
-                    'rgba(201, 76, 76, 0.8)',
-                    'rgba(0, 129, 212, 1)',
-                    'rgba(201, 77, 201, 1)',
-                    'rgba(255, 207, 207, 1)',
-                    'rgba(201, 77, 77, 1)',
-                    'rgba(128, 98, 98, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(128, 128, 128, 1)'
                 ],
                 fill: false,
                 borderWidth: 1
@@ -201,12 +178,25 @@ foreach ($analisis_semester as $key => $value) {
         },
         options: {
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Grafik Analisis Semester'
                     }
-                }]
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Grafik Analisis Semester'
+                    },
+                    min: 0,
+                    max: 200,
+                    ticks: {
+                        // forces step size to be 50 units
+                        stepSize: 1
+                    }
+                }
             }
         }
     });
-</script> -->
+</script>

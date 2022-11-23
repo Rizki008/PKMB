@@ -18,7 +18,6 @@
                     </div>
                     <div class="map_section padding_infor_info">
                         <canvas id="speedChart"></canvas>
-                        <!-- <canvas id="densityChart"></canvas> -->
                     </div>
                 </div>
             </div>
@@ -40,7 +39,7 @@ foreach ($analisis_alamat as $key => $value) {
     $tgl_daftar[] = $value->tgl_daftar;
 }
 ?>
-<script>
+<!-- <script>
     var speedCanvas = document.getElementById("speedChart");
 
     Chart.defaults.global.defaultFontFamily = "Lato";
@@ -121,7 +120,7 @@ foreach ($analisis_alamat as $key => $value) {
     var chartOptions = {
         legend: {
             display: true,
-            position: 'top',
+            position: 'right',
             labels: {
                 boxWidth: 80,
                 fontColor: 'black'
@@ -134,59 +133,269 @@ foreach ($analisis_alamat as $key => $value) {
         data: speedData,
         options: chartOptions
     });
-</script>
-
-<!-- <?php
-        // foreach ($analisis_alamat as $key => $value) {
-        //     $alamat[] = $value->alamat;
-        //     $total_alamat[] = $value->total_alamat;
-        //     $tgl_daftar[] = $value->tgl_daftar;
-        // }
-        ?> -->
-<!-- <script>
-    var densityCanvas = document.getElementById("densityChart");
-
-    Chart.defaults.global.defaultFontFamily = "Lato";
-    Chart.defaults.global.defaultFontSize = 18;
-
-    var densityData = {
-        label: <?= json_encode($alamat) ?>,
-        data: <?= json_encode($total_alamat) ?>,
-        backgroundColor: 'rgba(0, 99, 132, 0.6)',
-        borderColor: 'rgba(0, 99, 132, 1)',
-        yAxisID: "y-axis-density"
-    };
-
-    var gravityData = {
-        label: <?= json_encode($alamat) ?>,
-        data: <?= json_encode($total_alamat) ?>,
-        backgroundColor: 'rgba(99, 132, 0, 0.6)',
-        borderColor: 'rgba(99, 132, 0, 1)',
-        yAxisID: "y-axis-gravity"
-    };
-
-    var planetData = {
-        labels: <?= json_encode($tgl_daftar) ?>,
-        datasets: [densityData, gravityData]
-    };
-
-    var chartOptions = {
-        scales: {
-            xAxes: [{
-                barPercentage: 1,
-                categoryPercentage: 0.6
-            }],
-            yAxes: [{
-                id: "y-axis-density"
-            }, {
-                id: "y-axis-gravity"
-            }]
-        }
-    };
-
-    var barChart = new Chart(densityCanvas, {
-        type: 'bar',
-        data: planetData,
-        options: chartOptions
-    });
 </script> -->
+
+<script>
+    const ctx = document.getElementById('speedChart').getContext('2d');
+    const speedChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: <?= json_encode($tgl_daftar) ?>,
+            datasets: [{
+                label: 'Kuningan',
+                data: <?= json_encode($kuningan) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    // 'rgba(54, 162, 235, 0.80)',
+                    // 'rgba(255, 206, 86, 0.80)',
+                    // 'rgba(75, 192, 192, 0.80)',
+                    // 'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Ciawilor',
+                data: <?= json_encode($ciawilor) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    // 'rgba(54, 162, 235, 0.80)',
+                    // 'rgba(255, 206, 86, 0.80)',
+                    // 'rgba(75, 192, 192, 0.80)',
+                    // 'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Jalaksana',
+                data: <?= json_encode($jalaksana) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    // 'rgba(54, 162, 235, 0.80)',
+                    // 'rgba(255, 206, 86, 0.80)',
+                    // 'rgba(75, 192, 192, 0.80)',
+                    // 'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Sindang Barang',
+                data: <?= json_encode($sindang_barang) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    // 'rgba(54, 162, 235, 0.80)',
+                    // 'rgba(255, 206, 86, 0.80)',
+                    // 'rgba(75, 192, 192, 0.80)',
+                    // 'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Bandung',
+                data: <?= json_encode($bandung) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    // 'rgba(54, 162, 235, 0.80)',
+                    // 'rgba(255, 206, 86, 0.80)',
+                    // 'rgba(75, 192, 192, 0.80)',
+                    'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Majalengka',
+                data: <?= json_encode($majalengka) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    // 'rgba(54, 162, 235, 0.80)',
+                    // 'rgba(255, 206, 86, 0.80)',
+                    'rgba(75, 192, 192, 0.80)',
+                    // 'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Cicaheum',
+                data: <?= json_encode($cicaheum) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    // 'rgba(54, 162, 235, 0.80)',
+                    'rgba(255, 206, 86, 0.80)',
+                    // 'rgba(75, 192, 192, 0.80)',
+                    // 'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }, {
+                label: 'Subang',
+                data: <?= json_encode($subang) ?>,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.80)',
+                    'rgba(54, 162, 235, 0.80)',
+                    // 'rgba(255, 206, 86, 0.80)',
+                    // 'rgba(75, 192, 192, 0.80)',
+                    // 'rgba(153, 102, 255, 0.80)',
+                    // 'rgba(255, 159, 64, 0.80)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)',
+                    // 'rgba(201, 76, 76, 0.3)',
+                    // 'rgba(201, 77, 77, 1)',
+                    // 'rgba(0, 140, 162, 1)',
+                    // 'rgba(158, 109, 8, 1)',
+                ],
+                fill: false,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Grafik Analisis Semester'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Grafik Analisis Semester'
+                    },
+                    min: 0,
+                    max: 10,
+                    ticks: {
+                        // forces step size to be 50 units
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    });
+</script>
