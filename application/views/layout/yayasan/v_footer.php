@@ -34,6 +34,9 @@
 <script src="<?= base_url() ?>backend/js/custom.js"></script>
 <script src="<?= base_url() ?>backend/js/chart_custom_style1.js"></script>
 
+<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"></script> -->
 <script>
 	function bacaGambar(input) {
 		if (input.files && input.files[0]) {
@@ -67,6 +70,7 @@
 		});
 	});
 </script>
+
 </body>
 
 </html>
