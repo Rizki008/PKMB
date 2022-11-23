@@ -186,13 +186,13 @@ foreach ($analisis_usia as $key => $value) {
                 x: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Peminatan Siswa'
+                        text: 'Grafik Analisis Usia Siswa'
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Peminatan Siswa'
+                        text: 'Grafik Analisis Usia Siswa'
                     },
                     min: 0,
                     max: 20,
