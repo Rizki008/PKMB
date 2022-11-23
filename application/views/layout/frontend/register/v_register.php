@@ -63,22 +63,24 @@
 										<input name="password" type="password" value="<?= set_value('password') ?>" placeholder="Password" required>
 									</div>
 								</div>
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="form-group">
-										<i class="fa fa-venus-mars"></i>
-										<input type="text" name="jenis_kel" value="<?= set_value('jenis_kel') ?>" placeholder="Laki-laki / Perempuan" required>
-									</div>
-								</div>
+								<!-- <div class="col-lg-6 col-md-6 col-12"> -->
+								<!-- <div class="form-group"> -->
+								<i class="fa fa-venus-mars"></i>
+								<input type="radio" name="jenis_kel" value="laki-laki" <?php echo set_radio('jenis_kel', 'laki-laki', true) ?>>laki laki
+								<input type="radio" name="jenis_kel" value="Prempuan" <?php echo set_radio('jenis_kel', 'Perempuan') ?>>Prempuan
+								<!-- <input type="radio" name="jenis_kel" value="<?= set_value('jenis_kel') ?>" placeholder="Laki-laki / Perempuan" required> -->
+								<!-- </div> -->
+								<!-- </div> -->
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
 										<i class="fa fa-user"></i>
-										<input name="usia" type="number" value="<?= set_value('usia') ?>" placeholder="Usia" required>
+										<input name="usia" type="text" value="<?= set_value('usia') ?>" placeholder="Usia" required>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
 										<i class="fa fa-phone"></i>
-										<input name="no_tlpn" type="number" value="<?= set_value('no_tlpn') ?>" placeholder="No Telphon" required>
+										<input name="no_tlpn" type="text" value="<?= set_value('no_tlpn') ?>" placeholder="No Telphon" required>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-12">
