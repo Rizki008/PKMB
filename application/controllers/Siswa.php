@@ -11,6 +11,7 @@ class Siswa extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_siswa');
+        $this->load->model('m_pendaftaran');
     }
 
     // List all your items

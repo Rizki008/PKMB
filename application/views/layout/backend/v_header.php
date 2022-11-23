@@ -21,6 +21,11 @@
 					</div>
 				</div>
 				<div class="sidebar_blog_2">
+					<!-- Header -->
+					<?php
+					$total_pendaftar = $this->m_pendaftaran->total_pendaftar();
+					// $notiftolaka = $this->m_pendaftaran->notiftolaka();
+					?>
 					<h4>General</h4>
 					<ul class="list-unstyled components">
 						<li class="active">
