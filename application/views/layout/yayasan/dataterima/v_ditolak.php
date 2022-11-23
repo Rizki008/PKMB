@@ -26,7 +26,7 @@
 										<th>Nama Warga</th>
 										<th>No HP</th>
 										<th>Alamat</th>
-										<th>Alasan Diterima/Tidak</th>
+										<th>Alasan Diterima atau Tidak</th>
 										<th>Action</th>
 									</tr>
 								</thead>
