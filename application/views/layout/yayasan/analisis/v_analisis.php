@@ -181,13 +181,13 @@ foreach ($analisis_semester as $key => $value) {
                 x: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Semester'
+                        text: 'Data Semester'
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Semester'
+                        text: 'Data Semester'
                     },
                     min: 0,
                     max: 200,

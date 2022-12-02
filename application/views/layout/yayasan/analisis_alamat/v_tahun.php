@@ -380,13 +380,13 @@ foreach ($analisis_alamat as $key => $value) {
                 x: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Semester'
+                        text: 'Data Alamat'
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Semester'
+                        text: 'Data Alamat'
                     },
                     min: 0,
                     max: 10,

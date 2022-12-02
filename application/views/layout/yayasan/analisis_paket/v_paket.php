@@ -125,13 +125,13 @@ foreach ($analisis_paket as $key => $value) {
                 x: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Paket'
+                        text: 'Data Paket'
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Grafik Analisis Paket'
+                        text: 'Data Paket'
                     },
                     min: 0,
                     max: 20,

@@ -81,43 +81,6 @@ class Analisis extends CI_Controller
         $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
     }
 
-    // public function semester_coy()
-    // {
-    //     $tahun = $this->input->post('tahun');
-
-    //     $data = array(
-    //         'title' => 'Data Semester',
-    //         'tahun' => $tahun,
-    //         'genap' => $this->m_pendaftaran->semester_coy($tahun),
-    //         'isi' => 'layout/yayasan/analisis/v_analisis'
-    //     );
-    //     $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
-    // }
-    // public function genap()
-    // {
-    //     $tahun = $this->input->post('tahun');
-
-    //     $data = array(
-    //         'title' => 'Data Semester Genap',
-    //         'tahun' => $tahun,
-    //         'genap' => $this->m_pendaftaran->genap($tahun),
-    //         'isi' => 'layout/yayasan/analisis/v_analisis_genap'
-    //     );
-    //     $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
-    // }
-    // public function ganjil()
-    // {
-    //     $tahun = $this->input->post('tahun');
-
-    //     $data = array(
-    //         'title' => 'Data Semester Ganjil',
-    //         'tahun' => $tahun,
-    //         'ganjil' => $this->m_pendaftaran->ganjil($tahun),
-    //         'isi' => 'layout/yayasan/analisis/v_analisis_ganjil'
-    //     );
-    //     $this->load->view('layout/yayasan/v_wrapper', $data, FALSE);
-    // }
-
     //usia
     public function usia()
     {
